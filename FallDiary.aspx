@@ -10,8 +10,11 @@
 <body>
     <form id="form1" runat="server">
         <div class="container">
-        <p>Please complete this "Fall Details" form for EACH reported fall!</p>
-        <p style="color: blue;">(link to FallDetails page)</p>
+        <div class="confirmationHead">
+            <strong>Custom Confirmation Message</strong><br /><br />
+            <p>Please complete this "Fall Details" form for EACH reported fall!</p>
+            <p style="color: blue;">(link to FallDetails page)</p>
+        </div>
 
         <h1>Fall Diary</h1>
         <p>Definition of a fall: An event which results in a person coming 
