@@ -6,17 +6,22 @@
 <head runat="server">
     <title>Fitness and Falls Login</title>
 </head>
-<body style="height: 267px">
+<body style="background-color: thistle">
     <form id="form1" runat="server">
-        <asp:Label ID="lblPrompt" runat="server" Text=" Login to Fitness and Falls"></asp:Label>
-        <br /><br />
-        <asp:Label ID="lblUsername" runat="server" Text="Username:     "></asp:Label>
-        <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="lblPassword" runat="server" Text="Password:     "></asp:Label>
-        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
-        <br /><br />
-        <asp:Button ID="btnLogin" runat="server" Text="Login" />
+        <h2 style="margin-top; text-align:center">Login to Fitness and Falls</h2>
+        <table style="margin:auto; border:5px solid white">
+            <tr>
+                <td><asp:Label ID="lblUsername" runat="server" Text="Username:"></asp:Label>
+                <td><asp:TextBox ID="txtUsername" runat="server"></asp:TextBox></td></td>
+            </tr>
+            <tr>
+                <td><asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label></td>
+                <td><asp:TextBox ID="txtPassword" runat="server"></asp:TextBox></td>
+            </tr>
+            <tr>
+                <td><asp:Button ID="btnLogin" runat="server" Text="Login" /></td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>
