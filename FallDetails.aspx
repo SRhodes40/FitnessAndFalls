@@ -78,25 +78,37 @@ h3{
             <br />
 
         <h3>Were you injured as a result of the fall?</h3><br />
-        <asp:RadioButton ID="rbYesInjuredFallen" runat="server" />
+            <asp:RadioButtonList ID="rblResultOfFall" runat="server">
+                <asp:ListItem Text="No" Value ="0" />
+                 <asp:ListItem Text="Yes" Value ="1" />
+            </asp:RadioButtonList>
+        <%--<asp:RadioButton ID="rbYesInjuredFallen" runat="server" />
         <asp:Label ID="lblYesInjuredFallen" runat="server" Text="Yes"></asp:Label><br />
         <asp:RadioButton ID="rbNoInjuryFallen" runat="server" />
-        <asp:Label ID="lblNoInjuryFallen" runat="server" Text="No"></asp:Label>
+        <asp:Label ID="lblNoInjuryFallen" runat="server" Text="No"></asp:Label>--%>
 
         <h3>If yes, please describe the injury?</h3>
         <asp:TextBox ID="txtDescribeInjury" runat="server"></asp:TextBox>
 
           <h3>Were you using an assistive device when you fell?</h3><br />
-        <asp:RadioButton ID="rbYesAssistiveDevice" runat="server" />
+             <asp:RadioButtonList ID="rblAssistiveDevice" runat="server">
+                <asp:ListItem Text="No" Value ="0" />
+                 <asp:ListItem Text="Yes" Value ="1" />
+            </asp:RadioButtonList>
+       <%-- <asp:RadioButton ID="rbYesAssistiveDevice" runat="server" />
         <asp:Label ID="lblYesAssistiveDevice" runat="server" Text="Yes"></asp:Label><br />
         <asp:RadioButton ID="rbNoAssistiveDevice" runat="server" />
-        <asp:Label ID="lblNoAssistiveDevice" runat="server" Text="No"></asp:Label>
+        <asp:Label ID="lblNoAssistiveDevice" runat="server" Text="No"></asp:Label>--%>
 
           <h3>Did you change any prescription medications in the month preceding the fall? *</h3><br />
-        <asp:RadioButton ID="rbYesChangedPrescription" runat="server" />
+             <asp:RadioButtonList ID="rblChangePrescription" runat="server">
+                <asp:ListItem Text="No" Value ="0" />
+                 <asp:ListItem Text="Yes" Value ="1" />
+            </asp:RadioButtonList>
+        <%--<asp:RadioButton ID="rbYesChangedPrescription" runat="server" />
         <asp:Label ID="lblYesChangedPrescription" runat="server" Text="Yes"></asp:Label><br />
         <asp:RadioButton ID="rbNoChangedPrescription" runat="server" />
-        <asp:Label ID="lblnoChangedPrescription" runat="server" Text="No"></asp:Label>
+        <asp:Label ID="lblnoChangedPrescription" runat="server" Text="No"></asp:Label>--%>
 
 
         <h3>If yes, what changes were made? *</h3>
