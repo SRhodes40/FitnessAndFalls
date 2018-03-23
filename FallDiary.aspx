@@ -11,14 +11,14 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="confirmation" style="border: none;">
-                <strong>Custom Confirmation Message</strong><br /><br />
+                <strong>Custom confirmation message</strong><br /><br />
                 <p>Please complete this "Fall Details" form for EACH reported fall!</p>
                 <p style="color: blue;">(link to FallDetails page)</p>
             </div>
 
             <div class="confirmation">
                 <p class="txtTitle">Fall Diary</p>
-                <p style="font-size: .8em; margin-bottom: 20px;">Definition of a fall: An event which results in a person coming 
+                <p id="definition">Definition of a fall: An event which results in a person coming 
                     to rest unintentionally on the ground or other lower level, not 
                     as a result of a major intrinsic event (such as a stroke) or 
                     overwhelming hazard. </p><br />
