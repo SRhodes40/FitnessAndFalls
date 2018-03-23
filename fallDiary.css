@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     background-color: rgb(237, 231, 246);
-    color: rgb(60, 60, 60);
+    color: rgb(20, 20, 20);
     font-family: Helvetica, sans-serif;
 }
 
@@ -18,7 +18,7 @@ h3{
 }
 
 .container{
-    width: 40%;
+    width: 640px;
     margin: 50px auto;
 }
 
@@ -27,7 +27,7 @@ h3{
     height: auto;
     margin: 50px 0;
     padding: 35px;
-    box-shadow: 0px 0px 8px -3px #4f4f4f;
+    box-shadow: 0px 1px 8px -1.5px #4f4f4f;
     background-color: white;
     border-top: 8px solid rgb(179, 136, 255);
 }
@@ -47,9 +47,9 @@ h3{
 
 .txtTitle{
     margin-bottom: 35px;
-    font-size: 1.9em;
+    font-size: 2.1em;
 }
 
 .txtQuestions{
-    font-size: 1.3em;
+    font-size: 1.28em;
 }
