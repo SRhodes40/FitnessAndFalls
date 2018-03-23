@@ -1,8 +1,9 @@
 ﻿body {
     margin: 0;
     padding: 0;
-    background-color: #f3eaff;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(237, 231, 246);
+    color: rgb(60, 60, 60);
+    font-family: Helvetica, sans-serif;
 }
 
 p{
@@ -17,7 +18,7 @@ h3{
 }
 
 .container{
-    width: 45%;
+    width: 40%;
     margin: 50px auto;
 }
 
@@ -25,10 +26,10 @@ h3{
     width: auto;
     height: auto;
     margin: 50px 0;
-    padding: 20px;
-    box-shadow: 1px 1px 5px #4f4f4f;
+    padding: 35px;
+    box-shadow: 0px 0px 8px -3px #4f4f4f;
     background-color: white;
-    border-top: 10px solid #c091ff;
+    border-top: 8px solid rgb(179, 136, 255);
 }
 
 .txtMargin {
@@ -37,7 +38,18 @@ h3{
 
 #footerDetails {
     color: white;
-    background-color: #7129d1;
-    padding: 5px;
-    width: 90%;
+    background-color: rgb(103, 58, 183);
+    margin-left: -35px;
+    padding: 7px;
+    width: 97%;
+    font-size: 1.3em;
+}
+
+.txtTitle{
+    margin-bottom: 35px;
+    font-size: 1.9em;
+}
+
+.txtQuestions{
+    font-size: 1.3em;
 }
