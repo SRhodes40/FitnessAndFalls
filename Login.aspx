@@ -19,7 +19,8 @@
                 <td><asp:TextBox ID="txtPassword" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td><asp:Button ID="btnLogin" runat="server" Text="Login" /></td>
+                <td></td>
+                <td align="right"><asp:Button ID="btnLogin" runat="server" Text="Login" /></td>
             </tr>
         </table>
     </form>
