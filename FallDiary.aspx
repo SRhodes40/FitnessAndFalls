@@ -60,10 +60,12 @@
 
                 <p class="txtQuestions">How many times did you fall?</p>
                 <p style="font-size: .8em;">&nbsp;Please enter whole numbers greater than or equal to zero.</p><br />
-                <asp:TextBox ID="txtNumFalls" runat="server"></asp:TextBox><br /><br />
-
-                <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
-
+                <asp:TextBox ID="txtNumFalls" runat="server"></asp:TextBox><br /><br /><hr /><br />
+                
+                <div class="txtMargin" style="text-align: center;">
+                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+                </div>
+                
                 <h2 id="footerDetails">Please complete a "Fall Details" form for EACH fall!</h2>
             </div>
         </div>
