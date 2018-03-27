@@ -11,6 +11,7 @@
     <ul>
         <li><a href="Login.aspx">Login Page</a></li>
         <li><a href="FallDetails.aspx">Fall Details</a></li>
+        <li><a href="FallDiary.aspx">Fall Diary</a></li>
     </ul>
 </body>
 </html>
