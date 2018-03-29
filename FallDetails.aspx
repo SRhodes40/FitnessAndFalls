@@ -87,7 +87,7 @@
                 <asp:TextBox ID="txtPrescriptionChanged" runat="server"></asp:TextBox><br /><br /><hr /><br />
 
                 <div style="text-align: center;">
-                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
+                    <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" />
                 </div>
             </div>
         </div>
