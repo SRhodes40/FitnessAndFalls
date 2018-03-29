@@ -16,7 +16,7 @@ public partial class Login : System.Web.UI.Page
     {
         if (txtUsername.Text == "admin" && txtPassword.Text == "admin1234")
         {
-            Response.Redirect("~/Search.aspx");
+            Response.Redirect("~/FallDiary.aspx");
         }
         else
         {
