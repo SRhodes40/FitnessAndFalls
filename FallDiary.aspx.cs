@@ -49,7 +49,7 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text = "Duplicate Entry was not added.";
+                lblStatus.Text = ex.Message;//"Duplicate Entry was not added.";
             }
             conn.Close();
         } // end of Insert
