@@ -62,6 +62,9 @@
                 <p style="font-size: .8em;">&nbsp;Please enter whole numbers greater than or equal to zero.</p><br />
 &nbsp;<asp:TextBox ID="txtNumFalls" runat="server"></asp:TextBox><br /><br />
 
+                <p class="txtQuestions">Interview Date (YYYY-MM-DD) <span style="color: rgb(219, 79, 73)">*</span></p><br />
+&nbsp;<asp:TextBox ID="txtInterviewDate" runat="server"></asp:TextBox><br /><br />
+
                 <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                 <br />
                 <br />
