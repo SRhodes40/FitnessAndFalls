@@ -11,4 +11,17 @@ public partial class Login : System.Web.UI.Page
     {
 
     }
+
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        if (txtUsername.Text == "admin" && txtPassword.Text == "admin1234")
+        {
+            Response.Redirect("~/Search.aspx");
+        }
+        else
+        {
+            Loginlbl.Text = "Invalid Username or Password";
+        }
+
+    }
 }

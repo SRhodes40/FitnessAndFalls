@@ -30,7 +30,7 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "INSERT INTO FallDiary (InterviewerLastName, InterviewerFirstName,ParticipantID,ContactParticipant,FallenPastMonth, HowManyFallsLastMonth  ) VALUES ('"
-                + txtInterviewerLastName.Text + "','" + txtInterviewerFirstName.Text + "','" + txtParticipantID.Text + "','" + rblContact.SelectedValue + "','" + rblFallen.SelectedValue + "','" + txtNumFalls.Text + "')";
+                + txtInterviewerLastName.Text + "','" + txtInterviewerFirstName.Text + "','" + txtParticipantID.Text + "','" + rblContact.SelectedValue + "','" + rblFallen.SelectedValue + "','" + txtNumFallsFallDiary.Text + "')";
             try
             {
                 numRowsAffected = cmd.ExecuteNonQuery();
@@ -49,7 +49,7 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text = "Duplicate Entry was not added.";
+                lblStatus.Text = ex.Message;//"Duplicate Entry was not added.";
             }
             conn.Close();
         } // end of Insert

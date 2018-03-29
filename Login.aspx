@@ -16,13 +16,14 @@
             </tr>
             <tr>
                 <td><asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label></td>
-                <td><asp:TextBox ID="txtPassword" runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></td>
             </tr>
             <tr>
                 <td></td>
-                <td align="right"><asp:Button ID="btnLogin" runat="server" Text="Login" /></td>
+                <td align="right"><asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" /></td>
             </tr>
         </table>
+        <asp:Label ID="Loginlbl" runat="server" EnableViewState="False"></asp:Label>
     </form>
 </body>
 </html>

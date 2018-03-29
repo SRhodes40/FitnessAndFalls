@@ -43,7 +43,7 @@
                     <asp:ListItem Text="No" Value="0" />
                     <asp:ListItem Text="Yes" Value="1" />
                 </asp:RadioButtonList>
-<%--                <asp:RadioButton ID="rbYesParticipation" runat="server" />
+                <%--                <asp:RadioButton ID="rbYesParticipation" runat="server" />
                 <asp:Label ID="lblYesParticipation" runat="server" Text="Yes"></asp:Label><br />
                 <asp:RadioButton ID="rbNoParticipation" runat="server" />
                 <asp:Label ID="lblNoParticipation" runat="server" Text="No"></asp:Label><br /><br /><br />--%>
@@ -53,7 +53,7 @@
                     <asp:ListItem Text="No" Value="0" />
                     <asp:ListItem Text="Yes" Value="1" />
                 </asp:RadioButtonList>
-<%--                <asp:RadioButton ID="rbYesHaveFallen" runat="server" />
+                <%--                <asp:RadioButton ID="rbYesHaveFallen" runat="server" />
                 <asp:Label ID="lblYesHaveFallen" runat="server" Text="Yes"></asp:Label><br />
                 <asp:RadioButton ID="rbNoHaveFallen" runat="server" />
                 <asp:Label ID="lblNoHaveFallen" runat="server" Text="No"></asp:Label><br /><br /><br />--%>
@@ -61,22 +61,23 @@
                 <p class="txtQuestions">How many times did you fall?</p>
                 <p style="font-size: .8em;">&nbsp;Please enter whole numbers greater than or equal to zero.</p><br />
 <<<<<<< HEAD
-                <asp:TextBox ID="txtNumFalls" runat="server"></asp:TextBox><br /><br />
+<<<<<<< HEAD
+                <asp:TextBox ID="txtNumFallsFallDiary" runat="server"></asp:TextBox><br /><br />
+=======
+&nbsp;<asp:TextBox ID="txtNumFalls" runat="server"></asp:TextBox><br /><br />
 
-                <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                <p class="txtQuestions">Interview Date (YYYY-MM-DD) <span style="color: rgb(219, 79, 73)">*</span></p><br />
+&nbsp;<asp:TextBox ID="txtInterviewDate" runat="server"></asp:TextBox><br /><br />
+>>>>>>> 38c2296a30d654def5d67ae17eed706ca5df091f
+
+                <asp:Button ID="btnSubmitFallDiary" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
                 <br />
                 <br />
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
 
-=======
-                <asp:TextBox ID="txtNumFalls" runat="server"></asp:TextBox><br /><br /><hr /><br />
+&nbsp;<br /><br /><br />
                 
-                <div class="txtMargin" style="text-align: center;">
-                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" />
-                </div>
-                
->>>>>>> c223ac0b14b6143b455cdf6a4a79809519e1bfc0
-                <h2 id="footerDetails">Please complete a "Fall Details" form for EACH fall!</h2>
+                &nbsp;<h2 id="footerDetails">Please complete a "Fall Details" form for EACH fall!</h2>
             </div>
         </div>
     </form>
