@@ -10,6 +10,7 @@
     <h2>Fitness and Falls Files</h2>
     <ul>
         <li><a href="Login.aspx">Login Page</a></li>
+        <li><a href="AnnualDataCollection.aspx">Annual Data Collection</a></li>
     </ul>
 </body>
 </html>
