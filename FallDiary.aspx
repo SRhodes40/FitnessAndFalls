@@ -60,22 +60,17 @@
 
                 <p class="txtQuestions">How many times did you fall?</p>
                 <p style="font-size: .8em;">&nbsp;Please enter whole numbers greater than or equal to zero.</p><br />
-<<<<<<< HEAD
-<<<<<<< HEAD
                 <asp:TextBox ID="txtNumFallsFallDiary" runat="server"></asp:TextBox><br /><br />
-=======
-&nbsp;<asp:TextBox ID="txtNumFalls" runat="server"></asp:TextBox><br /><br />
 
                 <p class="txtQuestions">Interview Date (YYYY-MM-DD) <span style="color: rgb(219, 79, 73)">*</span></p><br />
-&nbsp;<asp:TextBox ID="txtInterviewDate" runat="server"></asp:TextBox><br /><br />
->>>>>>> 38c2296a30d654def5d67ae17eed706ca5df091f
+                &nbsp;<asp:TextBox ID="txtInterviewDate" runat="server"></asp:TextBox><br /><br />
 
-                <asp:Button ID="btnSubmitFallDiary" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                <div style="text-align: center;">
+                    <asp:Button ID="btnSubmitFallDiary" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                </div>
                 <br />
                 <br />
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
-
-&nbsp;<br /><br /><br />
                 
                 &nbsp;<h2 id="footerDetails">Please complete a "Fall Details" form for EACH fall!</h2>
             </div>
