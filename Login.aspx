@@ -5,6 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Fitness and Falls Login</title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 34px;
+        }
+    </style>
 </head>
 <body style="background-color: thistle">
     <form id="form1" runat="server">
@@ -19,11 +24,13 @@
                 <td><asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></td>
             </tr>
             <tr>
-                <td></td>
-                <td align="right"><asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" /></td>
+                <td class="auto-style1">
+                    <asp:Button ID="btnLoginPage" runat="server" Text="Login" OnClick="btnLoginPage_Click" />
+        <asp:Label ID="lblLogin" runat="server" EnableViewState="False"></asp:Label>
+                </td>
+           
             </tr>
         </table>
-        <asp:Label ID="Loginlbl" runat="server" EnableViewState="False"></asp:Label>
     </form>
 </body>
 </html>

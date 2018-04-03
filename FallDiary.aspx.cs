@@ -59,4 +59,9 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
             return ConfigurationManager.ConnectionStrings["FitnessAndFallsConnectionString"].ConnectionString;
         } // end of getConnectionString
 
+
+    protected void btnFallDiaryLogout_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Login.aspx");
     }
+}

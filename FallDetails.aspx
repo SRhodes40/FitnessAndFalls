@@ -88,6 +88,7 @@
 
                 <div style="text-align: center;">
                     <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" />
+                    <asp:Button ID="btnFallDetailsLogout" runat="server" OnClick="btnFallDetailsLogout_Click" Text="Logout" />
                 </div>
             </div>
         </div>

@@ -11,4 +11,9 @@ public partial class FallDetails : System.Web.UI.Page
     {
 
     }
+
+    protected void btnFallDetailsLogout_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Login.aspx");
+    }
 }
