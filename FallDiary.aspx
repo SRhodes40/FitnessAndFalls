@@ -64,6 +64,7 @@
 
                 <div style="text-align: center;">
                     <asp:Button ID="btnSubmitFallDiary" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+                    <asp:Button ID="btnFallDiaryLogout" runat="server" OnClick="btnFallDiaryLogout_Click" Text="Logout" />
                 </div>
                 <br /><hr /><br /><br />
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>

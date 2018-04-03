@@ -6,6 +6,14 @@
 <head runat="server">
     <title>Annual Data Collection</title>
     <link rel="stylesheet" href="fallDiary.css" />
+    <style type="text/css">
+        .auto-style1 {
+            margin-left: 280px;
+        }
+        .auto-style2 {
+            margin-left: 34px;
+        }
+    </style>
 </head>
 <body>
     <form id="AnnualDataForm" runat="server">
@@ -161,14 +169,14 @@
      </div>
 
      <div>
-         <h1>Medication List</h1>
-         <h3>Please list medications you are currently taking.</h3><br />
-        <asp:TextBox ID="txtParticipantMeds" runat="server"></asp:TextBox>
+         <h1 class="auto-style1">&nbsp;&nbsp; Medication List</h1>
+         <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please list medications you are currently taking.</h3>
+         <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <asp:TextBox ID="txtParticipantMeds" runat="server" CssClass="auto-style2"></asp:TextBox>
      </div>
 
      <div class="container">
-         <h1>Fall History</h1>
-         <h3>Have you experienced a fall in the past 6 months? *</h3>
+         <h1>Fall History    <h3>Have you experienced a fall in the past 6 months? *</h3>
          <asp:RadioButtonList ID="rblFall6Months" runat="server">
                 <asp:ListItem>Yes</asp:ListItem>
                 <asp:ListItem>No</asp:ListItem>
