@@ -19,7 +19,14 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //Hides questions based on whether or not interview made contact with participant
+        if (this.rblContact.SelectedValue == "1")
+        {
+            panContact.Visible = true;
+        }else
+        {
+            panContact.Visible = false;
+        }
     }
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
@@ -29,9 +36,12 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
             cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO FallDiary (InterviewerLastName, InterviewerFirstName,ParticipantID,ContactParticipant,FallenPastMonth, HowManyFallsLastMonth  ) VALUES ('"
-                + txtInterviewerLastName.Text + "','" + txtInterviewerFirstName.Text + "','" + txtParticipantID.Text + "','" + rblContact.SelectedValue + "','" + rblFallen.SelectedValue + "','" + txtNumFallsFallDiary.Text + "')";
-            try
+         //  cmd.CommandText = "INSERT INTO FallDiary (InterviewerLastName, InterviewerFirstName,ParticipantID,ContactParticipant,FallenPastMonth, HowManyFallsLastMonth, InterviewDate  ) VALUES ('"
+         //       + txtInterviewerLastName.Text + "','" + txtInterviewerFirstName.Text + "','" + txtParticipantID.Text + "','" + rblContact.SelectedValue + "','" + rblFallen.SelectedValue + "'," + txtNumFalls.Text + ",'" + txtInterviewDate.Text + "')";
+           // Response.Write(cmd.CommandText);
+            
+              try
+             
             {
                 numRowsAffected = cmd.ExecuteNonQuery();
                 if (numRowsAffected == 1)
@@ -52,6 +62,7 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
                 lblStatus.Text = ex.Message;//"Duplicate Entry was not added.";
             }
             conn.Close();
+            
         } // end of Insert
     }
         private string getConnectionString()
