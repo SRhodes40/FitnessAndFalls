@@ -27,6 +27,9 @@
                 <p style="font-size: .8em;">&nbsp;Please Enter a Whole Number (eg., 29)</p><br />
                 <asp:TextBox class="txtMargin" ID="txtParticipantID" runat="server"></asp:TextBox>
 
+                <p class="txtQuestions">Interview Date (YYYY-MM-DD) <span style="color: rgb(219, 79, 73)">*</span></p><br />
+                <asp:TextBox class="txtMargin" ID="txtInterviewDate" runat="server"></asp:TextBox>
+
                 <p class="txtQuestions">In what month did the fall occur? <span style="color: rgb(219, 79, 73)">*</span></p><br />
                 <asp:RadioButtonList class="txtMargin" ID="rblMonthOfFall" runat="server">
                     <asp:ListItem Text="January" Value ="1" />
@@ -59,8 +62,7 @@
                 <p class="txtQuestions">Where were you when you fell? <span style="color: rgb(219, 79, 73)">*</span></p><br />
                 <asp:TextBox class="txtMargin" ID="txtFallLocation" runat="server"></asp:TextBox><br />
 
-                <p class="txtQuestions">Where were you when you fell? <span style="color: rgb(219, 79, 73)">*</span></p><br />
-                <asp:TextBox class="txtMargin" ID="TextBox1" runat="server"></asp:TextBox><br />
+              
 
                 <p class="txtQuestions">Were you injured as a result of the fall?</p><br />
                 <asp:RadioButtonList class="txtMargin" ID="rblResultOfFall" runat="server">
@@ -87,8 +89,11 @@
                 <asp:TextBox ID="txtPrescriptionChanged" runat="server"></asp:TextBox><br /><br /><hr /><br />
 
                 <div style="text-align: center;">
-                    <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" />
+                    <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" OnClick="btnSubmitFallDetails_Click" />
+                    <br />
+                    
                 </div>
+                <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
             </div>
         </div>
     </form>
