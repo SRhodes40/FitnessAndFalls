@@ -456,16 +456,135 @@
      <div class="container">
        <h1>Grip Strength</h1>
        <h3>Dominant hand *</h3>
-            <asp:RadioButtonList ID="rblDomHand" runat="server">
+            <asp:RadioButtonList ID="rblGripStrength" runat="server">
                 <asp:ListItem>Right</asp:ListItem>
                 <asp:ListItem>Left</asp:ListItem>
             </asp:RadioButtonList> 
        <h3>Grip strength (kg)</h3>
          <p>Enter the best of two measurements</p><br />
             <asp:TextBox ID="txtGripStrength" runat="server"></asp:TextBox>
-        
       </div>
-    
+
+     <div class="container">
+       <h1>Chair Stand</h1>
+       <h3>Was able to complete the chair stand task</h3>
+            <asp:RadioButtonList ID="rblChairStand" runat="server">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:RadioButtonList> 
+       <h3>Number of Chair Stands</h3><br />
+            <asp:TextBox ID="txtChairStands" runat="server"></asp:TextBox>
+       <h3>Number of Chair Sits</h3><br />
+            <asp:TextBox ID="txtChairSits" runat="server"></asp:TextBox>
+       <h3>Average time to stand (s)</h3><br />
+            <asp:TextBox ID="txtTimeToStand" runat="server"></asp:TextBox>
+       <h3>Average time to sit (s)</h3><br />
+            <asp:TextBox ID="txtTimeToSit" runat="server"></asp:TextBox>
+       <h3>Stand time SD (s)</h3><br />
+            <asp:TextBox ID="txtStandTimeSD" runat="server"></asp:TextBox>
+       <h3>Sit time SD (s)</h3><br />
+            <asp:TextBox ID="txtSitTimeSD" runat="server"></asp:TextBox>
+     </div>
+        
+     <div class="container">
+       <h1>8-Ft Up-and-Go</h1>
+       <h3>Was able to complete the up-and-go task</h3>
+            <asp:RadioButtonList ID="rblUpAndGo" runat="server">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:RadioButtonList> 
+       <h3>Total Time (s)</h3><br />
+            <asp:TextBox ID="txtUpAndGoTime" runat="server"></asp:TextBox>
+       <h3>Stand Time (s)</h3><br />
+            <asp:TextBox ID="txtUpAndGoStandTime" runat="server"></asp:TextBox>
+       <h3>Sit Time (s)</h3><br />
+            <asp:TextBox ID="txtUpAndGoSitTime" runat="server"></asp:TextBox>
+       <h3>Gait Speed 1 (m/s)</h3><br />
+            <asp:TextBox ID="txtGaitSpeed1" runat="server"></asp:TextBox>
+       <h3>Gait Speed 2 (m/s)</h3><br />
+            <asp:TextBox ID="txtGaitSpeed2" runat="server"></asp:TextBox>
+       <h3>Turn Duration (s)</h3><br />
+            <asp:TextBox ID="txtTurnDuration" runat="server"></asp:TextBox>
+     </div>
+
+     <div class="container">
+       <h1>Lift and Carry</h1>
+       <h3>Was able to complete the 10 pound lift and carry task</h3>
+            <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:RadioButtonList> 
+       <h3>10 Pound Lift and carry time (s)</h3><br />
+            <asp:TextBox ID="txt10LAndCTime" runat="server"></asp:TextBox>
+       <h3>Was able to complete the 25 pound lift and carry task</h3>
+            <asp:RadioButtonList ID="RadioButtonList2" runat="server">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:RadioButtonList> 
+       <h3>25 Pound Lift and carry time (s)</h3><br />
+            <asp:TextBox ID="txt25LAndCTime" runat="server"></asp:TextBox>
+     </div>
+
+     <div class="container">
+       <h1>400 Meter Walk Test</h1>
+       <h3>Was able to complete the 400 meters without stopping *</h3>
+            <asp:RadioButtonList ID="rbl400Meters" runat="server">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:RadioButtonList>
+       <h3>Course length in meters</h3>
+            <asp:RadioButtonList ID="rblCourseLength" runat="server">
+                <asp:ListItem>16</asp:ListItem>
+                <asp:ListItem>20</asp:ListItem>
+                <asp:ListItem>25</asp:ListItem>
+            </asp:RadioButtonList> 
+       <h3>Time to complete 400 meters (s)</h3><br />
+            <asp:TextBox ID="txtTime400Meters" runat="server"></asp:TextBox>
+       <h3>Gait Speed Average (m/s)</h3><br />
+            <asp:TextBox ID="txtGaitSpeedAvg" runat="server"></asp:TextBox>
+       <h3>Gait Speed Standard Deviation (m/s)</h3><br />
+            <asp:TextBox ID="txtGaitSpeedSD" runat="server"></asp:TextBox>
+       <h3>Cadence Average (steps/min)</h3><br />
+            <asp:TextBox ID="txtCadenceAvg" runat="server"></asp:TextBox>
+       <h3>Cadence Standard Deviation (steps/min)</h3><br />
+            <asp:TextBox ID="txtCadenceSD" runat="server"></asp:TextBox>
+       <h3>Turn Duration Average (s)</h3><br />
+            <asp:TextBox ID="txtTurnDurationAvg" runat="server"></asp:TextBox>
+       <h3>Turn Duration Standard Deviation (s)</h3><br />
+            <asp:TextBox ID="txtTurnDurationSD" runat="server"></asp:TextBox>
+       <h3>Left Turn Duration Average (s)</h3><br />
+            <asp:TextBox ID="txtLeftTurnDurationAvg" runat="server"></asp:TextBox>
+       <h3>Left Turn Duration Standard Deviation (s)</h3><br />
+            <asp:TextBox ID="txtLeftTurnDurationSD" runat="server"></asp:TextBox>
+       <h3>Right Turn Duration Average (s)</h3><br />
+            <asp:TextBox ID="txtRightTurnDurationAvg" runat="server"></asp:TextBox>
+       <h3>Right Turn Duration Standard Deviation (s)</h3><br />
+            <asp:TextBox ID="txtRightTurnDurationSD" runat="server"></asp:TextBox>
+       <h3>Exercise Pulse Rate (bpm)</h3><br />
+            <asp:TextBox ID="txtExercisePulseRate" runat="server"></asp:TextBox>
+       <h3>Exercise SpO2 (%)</h3><br />
+            <asp:TextBox ID="ExerciseSpO2" runat="server"></asp:TextBox>
+      </div>
+
+      <div class="container">
+       <h1>Chair Sit and Reach</h1>
+       <h3>Reach distance in cm (right knee extended)</h3><br />
+            <asp:TextBox ID="txtReachDistanceRight" runat="server"></asp:TextBox>
+       <h3>Reach distance in cm (left knee extended)</h3><br />
+            <asp:TextBox ID="txtReachDistanceLeft" runat="server"></asp:TextBox>
+      </div>
+
+      <div class="container">
+       <h1>Overall Performance</h1>
+        <h3>Participant was able to complete all tests without error or modification *</h3>
+            <asp:RadioButtonList ID="rblOverallPerformance" runat="server">
+                <asp:ListItem>Yes</asp:ListItem>
+                <asp:ListItem>No</asp:ListItem>
+            </asp:RadioButtonList> 
+         <h3>If there were any test errors or modifications, please explain here</h3><br />
+            <asp:TextBox ID="txtOverallPerformance" runat="server"></asp:TextBox>
+      </div>
+
     </form>
 </body>
 </html>
