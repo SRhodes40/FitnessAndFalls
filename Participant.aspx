@@ -12,7 +12,7 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="confirmation">
-                <p class="txtTitle">Add New Participant</p>
+                <p class="txtTitle" style="text-align: center;">Add New Participant</p><hr /><br />
 
                 <p class="txtQuestions">LastName <span style="color: rgb(219, 79, 73)">*</span></p><br />
                 <asp:TextBox ID="txtParticipantLastName" runat="server" class="txtMargin"></asp:TextBox>
@@ -55,7 +55,7 @@
                 </div>
 
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label><br /><br />
-                <asp:GridView ID="gvAddParticipants" runat="server" AutoGenerateColumns="False" DataKeyNames="ParticipantID" DataSourceID="sdsViewAllParticipants" Visible="False">
+                <asp:GridView class="gridview" ID="gvAddParticipants" runat="server" AutoGenerateColumns="False" DataKeyNames="ParticipantID" DataSourceID="sdsViewAllParticipants" Visible="False">
                     <Columns>
                         <asp:BoundField DataField="ParticipantID" HeaderText="ParticipantID" InsertVisible="False" ReadOnly="True" SortExpression="ParticipantID" />
                         <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
