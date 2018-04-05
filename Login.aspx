@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td><asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label></td>
-                <td><asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox></td>
+                <td><asp:TextBox ID="txtPassword" runat="server" TextMode="Password" OnTextChanged="txtPassword_TextChanged"></asp:TextBox></td>
             </tr>
             <tr>
                 <td class="auto-style1">

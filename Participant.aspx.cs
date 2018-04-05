@@ -9,7 +9,7 @@ using System.Data.SqlClient; // for SqlConnection, SqlCommand, and SqlDataReader
 using System.Data;           // for CommandType
 
 
-public partial class FallCalls : System.Web.UI.Page
+public partial class Participant : System.Web.UI.Page
 {
     SqlConnection conn;
     SqlCommand cmd;
@@ -19,10 +19,10 @@ public partial class FallCalls : System.Web.UI.Page
     int numRowsAffected;
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
     }
 
-    protected void btnSumbitFallCalls_Click(object sender, EventArgs e)
+    protected void btnSubmitParticipant_Click(object sender, EventArgs e)
     {
         {
             conn = new SqlConnection(getConnectionString());
@@ -30,8 +30,8 @@ public partial class FallCalls : System.Web.UI.Page
             cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "INSERT INTO FallCalls (ParticipantID, CallDate,Falls  ) VALUES ('"
-                 + txtFallCallsParticipantID.Text + "','" + txtFallCallsCallDate.Text + "','" + txtFallCallsFalls.Text +  "')";
+            cmd.CommandText = "INSERT INTO Participant (LastName, FirstName,MiddleInitial,Suffix,PhoneNumber, Email, EmergencyContactFullName, EmergencyContactPhoneNumber, StartDate  ) VALUES ('"
+                 + txtParticipantLastName.Text + "','" + txtParticipantFirstName.Text + "','" + txtParticipantMiddle.Text + "','" + txtParticipantSuffix.Text + "','" + txtParticipantPhoneNumber.Text + "','" + txtParticipantEmail.Text + "','" + txtParticipantEmergencyContactFullName.Text + "','" + txtParticipantEmergencyContactPhoneNumber.Text + "','" + txtParticipantStartDate.Text + "')";
             Response.Write(cmd.CommandText);
 
             try
@@ -55,14 +55,7 @@ public partial class FallCalls : System.Web.UI.Page
             {
                 lblStatus.Text = ex.Message;//"Person not found.";
             }
-
-           
             conn.Close();
-            int tempint = Convert.ToInt32(txtFallCallsFalls.Text);
-            if(tempint >= 1)
-            {
-                Response.Redirect("FallDetails.aspx");
-            }
 
         } // end of Insert
     }
@@ -70,4 +63,22 @@ public partial class FallCalls : System.Web.UI.Page
     {
         return ConfigurationManager.ConnectionStrings["FitnessAndFallsConnectionString"].ConnectionString;
     } // end of getConnectionString
+
+    protected void btnViewAllParticipants_Click(object sender, EventArgs e)
+    {
+        if (this.gvAddParticipants.Visible == false)
+        {
+            this.gvAddParticipants.Visible = true;
+        }
+     
+    }
+
+    protected void btnHideParticipant_Click(object sender, EventArgs e)
+    {
+        if (this.gvAddParticipants.Visible == true)
+        {
+            this.gvAddParticipants.Visible = false;
+        }
+      
+    }
 }

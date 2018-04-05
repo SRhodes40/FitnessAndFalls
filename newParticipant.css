@@ -59,3 +59,10 @@ h3 {
 .txtQuestions {
     font-size: 1.28em;
 }
+
+.gridview {
+    font-size: .8em;
+    width: 100%;
+    word-wrap: break-word;
+    table-layout: fixed;
+}

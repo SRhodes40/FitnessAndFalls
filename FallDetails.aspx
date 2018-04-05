@@ -27,7 +27,7 @@
                 <p style="font-size: .8em;">&nbsp;Please Enter a Whole Number (eg., 29)</p><br />
                 <asp:TextBox class="txtMargin" ID="txtParticipantID" runat="server"></asp:TextBox>
 
-                <p class="txtQuestions">Interview Date (YYYY-MM-DD) <span style="color: rgb(219, 79, 73)">*</span></p><br />
+                <p class="txtQuestions">Interview Date *MUST MATCH CALL DATE ON PREVIOUS FORM!*&nbsp; (YYYY-MM-DD) <span style="color: rgb(219, 79, 73)">*</span></p><br />
                 <asp:TextBox class="txtMargin" ID="txtInterviewDate" runat="server"></asp:TextBox>
 
                 <p class="txtQuestions">In what month did the fall occur? <span style="color: rgb(219, 79, 73)">*</span></p><br />
@@ -95,11 +95,7 @@
                     
 
                     
-<<<<<<< HEAD
-         
-=======
-                    
->>>>>>> d6fba1fe32f02bc6bc0d862723b0a182bf5be28e
+
 
                 </div>
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>

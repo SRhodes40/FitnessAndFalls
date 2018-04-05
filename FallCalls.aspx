@@ -16,7 +16,7 @@
                 <p class="txtQuestions">Participant ID <span style="color: rgb(219, 79, 73)">*</span></p><br />
                 <asp:TextBox ID="txtFallCallsParticipantID" runat="server" class="txtMargin"></asp:TextBox>
 
-                <p class="txtQuestions">Call Date <span style="color: rgb(219, 79, 73)">*</span></p><br />
+                <p class="txtQuestions">Call Date (YYYY-MM-DD) <span style="color: rgb(219, 79, 73)">*</span></p><br />
                 <asp:TextBox ID="txtFallCallsCallDate" runat="server" class="txtMargin"></asp:TextBox>
 
                 <p class="txtQuestions">Number of Falls <span style="color: rgb(219, 79, 73)">*</span></p><br />
@@ -24,7 +24,7 @@
 
                 <hr />
                 <div class="txtMargin" style="text-align: center;"><br /><br />
-                    <asp:Button ID="btnSumbitFallCalls" runat="server" Text="Submit" />&nbsp;
+                    <asp:Button ID="btnSumbitFallCalls" runat="server" Text="Submit" OnClick="btnSumbitFallCalls_Click" />&nbsp;
                     <asp:Button ID="btnLogoutFallCalls" runat="server" Text="Logout" />
                 </div>
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
