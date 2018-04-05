@@ -45,10 +45,26 @@
                 <hr />
 
                 <div style="text-align: center;">
-                    <asp:Button ID="btnSubmitParticipant" runat="server" Text="Submit" />
+                    <asp:Button ID="btnSubmitParticipant" runat="server" Text="Submit" />&nbsp;
+                    <asp:Button ID="btnViewAllParticipants" runat="server" Text="View All Participants" />
                 </div>
 
-                <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
+                <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label><br /><br />
+                <asp:GridView ID="gvAddParticipants" runat="server" AutoGenerateColumns="False" DataKeyNames="ParticipantID" DataSourceID="sdsViewAllParticipants">
+                    <Columns>
+                        <asp:BoundField DataField="ParticipantID" HeaderText="ParticipantID" InsertVisible="False" ReadOnly="True" SortExpression="ParticipantID" />
+                        <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
+                        <asp:BoundField DataField="MiddleInitial" HeaderText="MiddleInitial" SortExpression="MiddleInitial" />
+                        <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+                        <asp:BoundField DataField="Suffix" HeaderText="Suffix" SortExpression="Suffix" />
+                        <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" SortExpression="PhoneNumber" />
+                        <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                        <asp:BoundField DataField="EmergencyContactFullName" HeaderText="EmergencyContactFullName" SortExpression="EmergencyContactFullName" />
+                        <asp:BoundField DataField="EmergencyContactPhoneNumber" HeaderText="EmergencyContactPhoneNumber" SortExpression="EmergencyContactPhoneNumber" />
+                        <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="sdsViewAllParticipants" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString %>" SelectCommand="SELECT * FROM [Participant]"></asp:SqlDataSource>
             </div>
         </div>
     </form>
