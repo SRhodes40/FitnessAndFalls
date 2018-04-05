@@ -21,7 +21,7 @@ public partial class FallDetails : System.Web.UI.Page
 
     }
 
-<<<<<<< HEAD
+
     protected void btnSubmitFallDetails_Click(object sender, EventArgs e)
     {
         {
@@ -30,8 +30,8 @@ public partial class FallDetails : System.Web.UI.Page
             cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = cmd.CommandText = "INSERT INTO FallDetails (InterviewerFirstName,InterviewerLastName,FallDiary.ParticipantID,CallDate,FallTime,MonthofFall, FallDescription, FallLocation, Injured, InjuryDesc, UsingAssistiveDevice, MedicationChange, MedChangeDesc ) VALUES ('"
-               + txtInterviewerFirstName.Text + "','" + txtInterviewerLastName.Text + "','" + txtParticipantID.Text + "','" + txtInterviewDate + "','" + rblTimeOfDay.SelectedValue+ "','" + rblMonthOfFall.SelectedValue + "','" + txtDescribeFall.Text +   "','" + txtFallLocation.Text + "','" + rblResultOfFall.SelectedValue + "','" + txtDescribeInjury.Text + "','" + rblAssistiveDevice.SelectedValue + "','" + rblChangePrescription.SelectedValue + "','" + txtPrescriptionChanged.Text +  "')";
+            cmd.CommandText = cmd.CommandText = "INSERT INTO FallDetails (InterviewerFirstName,InterviewerLastName,FallDiary.ParticipantID, CallDate,FallTime,FallMonth, FallDescription, FallLocation, Injured, InjuryDesc, UsingAssistiveDevice, MedicationChange, MedChangeDesc ) VALUES ('"
+               + txtInterviewerFirstName.Text + "','" + txtInterviewerLastName.Text + "','" + txtParticipantID.Text + "','" + txtInterviewDate.Text + "','" + rblTimeOfDay.SelectedValue+ "','" + rblMonthOfFall.SelectedValue + "','" + txtDescribeFall.Text +   "','" + txtFallLocation.Text + "','" + rblResultOfFall.SelectedValue + "','" + txtDescribeInjury.Text + "','" + rblAssistiveDevice.SelectedValue + "','" + rblChangePrescription.SelectedValue + "','" + txtPrescriptionChanged.Text +  "')";
             Response.Write(cmd.CommandText);
 
             try
@@ -64,10 +64,10 @@ public partial class FallDetails : System.Web.UI.Page
             return ConfigurationManager.ConnectionStrings["FitnessAndFallsConnectionString"].ConnectionString;
         } // end of getConnectionString
     }
+
+<<<<<<< HEAD
+  
+
 =======
-    protected void btnFallDetailsLogout_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("~/Login.aspx");
-    }
-}
->>>>>>> 23f231c073bb2aa503c1a1de7cc76dd0c97020de
+    
+>>>>>>> d6fba1fe32f02bc6bc0d862723b0a182bf5be28e
