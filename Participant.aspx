@@ -1,4 +1,5 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="NewParticipant.aspx.vb" Inherits="NewParticipant" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Participant.aspx.cs" Inherits="Participant" %>
+
 
 <!DOCTYPE html>
 
@@ -45,12 +46,16 @@
                 <hr />
 
                 <div style="text-align: center;">
-                    <asp:Button ID="btnSubmitParticipant" runat="server" Text="Submit" />&nbsp;
-                    <asp:Button ID="btnViewAllParticipants" runat="server" Text="View All Participants" />
+                    <asp:Button ID="btnSubmitParticipant" runat="server" Text="Submit" OnClick="btnSubmitParticipant_Click" />&nbsp;
+                    <asp:Button ID="btnViewAllParticipants" runat="server" Text="Show All Participants" OnClick="btnViewAllParticipants_Click" />
+                    &nbsp
+                    
+                    <asp:Button ID="btnHideParticipant" runat="server" Text="Hide All Participants" OnClick="btnHideParticipant_Click" />
+                    
                 </div>
 
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label><br /><br />
-                <asp:GridView ID="gvAddParticipants" runat="server" AutoGenerateColumns="False" DataKeyNames="ParticipantID" DataSourceID="sdsViewAllParticipants">
+                <asp:GridView ID="gvAddParticipants" runat="server" AutoGenerateColumns="False" DataKeyNames="ParticipantID" DataSourceID="sdsViewAllParticipants" Visible="False">
                     <Columns>
                         <asp:BoundField DataField="ParticipantID" HeaderText="ParticipantID" InsertVisible="False" ReadOnly="True" SortExpression="ParticipantID" />
                         <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
