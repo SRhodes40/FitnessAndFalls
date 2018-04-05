@@ -89,14 +89,18 @@
                 <asp:TextBox ID="txtPrescriptionChanged" runat="server"></asp:TextBox><br /><br /><hr /><br />
 
                 <div style="text-align: center;">
-<<<<<<< HEAD
+
                     <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" OnClick="btnSubmitFallDetails_Click" />
                     <br />
                     
+
+                    
+<<<<<<< HEAD
+         
 =======
-                    <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" />
-                    <asp:Button ID="btnFallDetailsLogout" runat="server" OnClick="btnFallDetailsLogout_Click" Text="Logout" />
->>>>>>> 23f231c073bb2aa503c1a1de7cc76dd0c97020de
+                    
+>>>>>>> d6fba1fe32f02bc6bc0d862723b0a182bf5be28e
+
                 </div>
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
             </div>
