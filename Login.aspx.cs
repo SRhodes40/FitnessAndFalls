@@ -39,4 +39,9 @@ public partial class Login : System.Web.UI.Page
             lblLogin.Text = "Invalid Username or Password";
         }
     }
+
+    protected void txtPassword_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }
