@@ -58,8 +58,8 @@
 
         <p class="txtQuestions">Is this a baseline test?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList class="txtMargin" ID="rblBaseline" runat="server">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>  
        
         <p class="txtQuestions">Participant ID<span style="color: rgb(219, 79, 73)">*</span></p><br />
@@ -92,28 +92,28 @@
 
         <p class="txtQuestions">Do you have a known/diagnosed health problem(s) that limit your activity?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblHealthProblems" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
          <p class="txtQuestions">Do you participate in at least 2 days of 30 minutes of continuous activity per week?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblContinousActivity" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
          <p class="txtQuestions">Do you have difficulty standing from a chair without assistance?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblDifficultyStanding" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
          <p class="txtQuestions">Have you ever been diagnosed with a balance disorder?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblBalanceDisorder" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
          <p class="txtQuestions">Do you experience dizziness, chest pain, or chest tightness during exercise?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblIssuesExercise" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
         </div>
 

@@ -30,12 +30,12 @@ public partial class AnnualDataCollectionForm : System.Web.UI.Page
             cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-          //  cmd.CommandText = 
+          //  cmd.CommandText = INSERT COMMAND GOES HERE
             
            // Response.Write(cmd.CommandText);
 
             try
-
+                
             {
                 numRowsAffected = cmd.ExecuteNonQuery();
                 if (numRowsAffected == 1)
