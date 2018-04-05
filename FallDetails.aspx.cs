@@ -30,8 +30,8 @@ public partial class FallDetails : System.Web.UI.Page
             cmd = new SqlCommand();
             cmd.Connection = conn;
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = cmd.CommandText = "INSERT INTO FallDetails (InterviewerFirstName,InterviewerLastName,FallDiary.ParticipantID,CallDate,FallTime,MonthofFall, FallDescription, FallLocation, Injured, InjuryDesc, UsingAssistiveDevice, MedicationChange, MedChangeDesc ) VALUES ('"
-               + txtInterviewerFirstName.Text + "','" + txtInterviewerLastName.Text + "','" + txtParticipantID.Text + "','" + txtInterviewDate + "','" + rblTimeOfDay.SelectedValue+ "','" + rblMonthOfFall.SelectedValue + "','" + txtDescribeFall.Text +   "','" + txtFallLocation.Text + "','" + rblResultOfFall.SelectedValue + "','" + txtDescribeInjury.Text + "','" + rblAssistiveDevice.SelectedValue + "','" + rblChangePrescription.SelectedValue + "','" + txtPrescriptionChanged.Text +  "')";
+            cmd.CommandText = cmd.CommandText = "INSERT INTO FallDetails (InterviewerFirstName,InterviewerLastName,FallDiary.ParticipantID, CallDate,FallTime,FallMonth, FallDescription, FallLocation, Injured, InjuryDesc, UsingAssistiveDevice, MedicationChange, MedChangeDesc ) VALUES ('"
+               + txtInterviewerFirstName.Text + "','" + txtInterviewerLastName.Text + "','" + txtParticipantID.Text + "','" + txtInterviewDate.Text + "','" + rblTimeOfDay.SelectedValue+ "','" + rblMonthOfFall.SelectedValue + "','" + txtDescribeFall.Text +   "','" + txtFallLocation.Text + "','" + rblResultOfFall.SelectedValue + "','" + txtDescribeInjury.Text + "','" + rblAssistiveDevice.SelectedValue + "','" + rblChangePrescription.SelectedValue + "','" + txtPrescriptionChanged.Text +  "')";
             Response.Write(cmd.CommandText);
 
             try
@@ -65,4 +65,9 @@ public partial class FallDetails : System.Web.UI.Page
         } // end of getConnectionString
     }
 
+<<<<<<< HEAD
+  
+
+=======
     
+>>>>>>> d6fba1fe32f02bc6bc0d862723b0a182bf5be28e
