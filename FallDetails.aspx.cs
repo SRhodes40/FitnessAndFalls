@@ -21,7 +21,7 @@ public partial class FallDetails : System.Web.UI.Page
 
     }
 
-<<<<<<< HEAD
+
     protected void btnSubmitFallDetails_Click(object sender, EventArgs e)
     {
         {
@@ -64,10 +64,5 @@ public partial class FallDetails : System.Web.UI.Page
             return ConfigurationManager.ConnectionStrings["FitnessAndFallsConnectionString"].ConnectionString;
         } // end of getConnectionString
     }
-=======
-    protected void btnFallDetailsLogout_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("~/Login.aspx");
-    }
-}
->>>>>>> 23f231c073bb2aa503c1a1de7cc76dd0c97020de
+
+    
