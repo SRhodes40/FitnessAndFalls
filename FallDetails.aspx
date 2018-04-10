@@ -92,11 +92,6 @@
 
                     <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" OnClick="btnSubmitFallDetails_Click" />
                     <br />
-                    
-
-                    
-
-
                 </div>
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
             </div>
