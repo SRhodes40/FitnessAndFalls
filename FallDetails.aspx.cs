@@ -53,7 +53,7 @@ public partial class FallDetails : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text = ex.Message;//"Duplicate Entry was not added.";
+                lblStatus.Text = "Participant ID does not exist or Date is incorrect." //ex.Message;//"Duplicate Entry was not added.";
             }
             conn.Close();
 
