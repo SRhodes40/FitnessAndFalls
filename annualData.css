@@ -1,0 +1,64 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(237, 231, 246);
+    color: rgb(20, 20, 20);
+    font-family: Helvetica, sans-serif;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    margin: 0;
+    margin-top: 0.67em;
+    padding: 0;
+}
+
+.container {
+    width: 640px;
+    margin: 50px auto;
+}
+
+.confirmation {
+    width: auto;
+    height: auto;
+    margin: 50px 0;
+    padding: 40px 35px;
+    box-shadow: 0px 1px 8px -1.5px #4f4f4f;
+    background-color: white;
+    border-top: 8px solid rgb(179, 136, 255);
+}
+
+.txtMargin {
+    margin-bottom: 60px;
+}
+
+#footerDetails {
+    color: white;
+    background-color: rgb(103, 58, 183);
+    margin-left: -35px;
+    padding: 7px;
+    width: 97%;
+    font-size: 1.3em;
+}
+
+#definition {
+    font-size: .8em;
+    line-height: 140%;
+    margin-bottom: 20px;
+    width: 92%;
+}
+
+.txtTitle {
+    margin-bottom: 35px;
+    font-size: 2.1em;
+}
+
+.txtQuestions {
+    font-size: 1.28em;
+    overflow-wrap: break-word;
+    width: 92%;
+}
