@@ -47,4 +47,9 @@ public partial class Results : System.Web.UI.Page
     {
         return ConfigurationManager.ConnectionStrings["FitnessAndFallsConnectionString"].ConnectionString;
     }
+
+    protected void menuBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MainMenu.aspx");
+    }
 }

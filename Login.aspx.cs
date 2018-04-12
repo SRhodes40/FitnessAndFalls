@@ -16,7 +16,7 @@ public partial class Login : System.Web.UI.Page
     {
         if (txtUsername.Text == "Admin" && txtPassword.Text == "Admin1234")
         {
-            Response.Redirect("~/FallDiary.aspx");
+            Response.Redirect("~/MainMenu.aspx");
         }
         else
         {
@@ -24,7 +24,7 @@ public partial class Login : System.Web.UI.Page
         }
         if (txtUsername.Text == "DataEntry" && txtPassword.Text == "DataEntry1234")
         {
-            Response.Redirect("~/FallDiary.aspx");
+            Response.Redirect("~/MainMenu.aspx");
         }
         else
         {
@@ -32,7 +32,7 @@ public partial class Login : System.Web.UI.Page
         }
         if (txtUsername.Text == "Reports" && txtPassword.Text == "Reports1234")
         {
-            Response.Redirect("~/FallDiary.aspx");
+            Response.Redirect("~/MainMenu.aspx");
         }
         else
         {

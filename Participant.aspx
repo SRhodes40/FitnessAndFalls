@@ -52,6 +52,8 @@
                     
                     <asp:Button ID="btnHideParticipant" runat="server" Text="Hide All Participants" OnClick="btnHideParticipant_Click" />
                     
+                &nbsp;<asp:Button ID="menuBtn" runat="server" Text="Main Menu" OnClick="menuBtn_Click" />
+                    
                 </div>
 
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label><br /><br />

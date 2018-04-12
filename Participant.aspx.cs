@@ -81,4 +81,9 @@ public partial class Participant : System.Web.UI.Page
         }
       
     }
+
+    protected void menuBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MainMenu.aspx");
+    }
 }

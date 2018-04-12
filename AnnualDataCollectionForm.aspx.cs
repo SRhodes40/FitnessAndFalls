@@ -68,4 +68,9 @@ public partial class AnnualDataCollectionForm : System.Web.UI.Page
     {
         Response.Redirect("~/Login.aspx");
     }
+
+    protected void menuBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MainMenu.aspx");
+    }
 }

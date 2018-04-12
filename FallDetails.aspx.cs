@@ -63,6 +63,11 @@ public partial class FallDetails : System.Web.UI.Page
         {
             return ConfigurationManager.ConnectionStrings["FitnessAndFallsConnectionString"].ConnectionString;
         } // end of getConnectionString
+
+    protected void menuBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MainMenu.aspx");
     }
+}
 
 

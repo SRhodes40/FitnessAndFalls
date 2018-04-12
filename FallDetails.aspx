@@ -91,6 +91,7 @@
                 <div style="text-align: center;">
 
                     <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" OnClick="btnSubmitFallDetails_Click" />
+                    &nbsp;<asp:Button ID="menuBtn" runat="server" Text="Main Menu" OnClick="menuBtn_Click" />
                     <br />
                 </div>
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
