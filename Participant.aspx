@@ -59,16 +59,16 @@
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label><br /><br />
                 <asp:GridView class="gridview" ID="gvAddParticipants" runat="server" AutoGenerateColumns="False" DataKeyNames="ParticipantID" DataSourceID="sdsViewAllParticipants" Visible="False">
                     <Columns>
-                        <asp:BoundField DataField="ParticipantID" HeaderText="ParticipantID" InsertVisible="False" ReadOnly="True" SortExpression="ParticipantID" />
-                        <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
-                        <asp:BoundField DataField="MiddleInitial" HeaderText="MiddleInitial" SortExpression="MiddleInitial" />
-                        <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+                        <asp:BoundField DataField="ParticipantID" HeaderText="Participant ID" InsertVisible="False" ReadOnly="True" SortExpression="ParticipantID" />
+                        <asp:BoundField DataField="FirstName" HeaderText="First Name" SortExpression="FirstName" />
+                        <asp:BoundField DataField="MiddleInitial" HeaderText="Middle Initial" SortExpression="MiddleInitial" />
+                        <asp:BoundField DataField="LastName" HeaderText="Last Name" SortExpression="LastName" />
                         <asp:BoundField DataField="Suffix" HeaderText="Suffix" SortExpression="Suffix" />
-                        <asp:BoundField DataField="PhoneNumber" HeaderText="PhoneNumber" SortExpression="PhoneNumber" />
+                        <asp:BoundField DataField="PhoneNumber" HeaderText="Phone Number" SortExpression="PhoneNumber" />
                         <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                        <asp:BoundField DataField="EmergencyContactFullName" HeaderText="EmergencyContactFullName" SortExpression="EmergencyContactFullName" />
-                        <asp:BoundField DataField="EmergencyContactPhoneNumber" HeaderText="EmergencyContactPhoneNumber" SortExpression="EmergencyContactPhoneNumber" />
-                        <asp:BoundField DataField="StartDate" HeaderText="StartDate" SortExpression="StartDate" />
+                        <asp:BoundField DataField="EmergencyContactFullName" HeaderText="Emergency Contact Full Name" SortExpression="EmergencyContactFullName" />
+                        <asp:BoundField DataField="EmergencyContactPhoneNumber" HeaderText="Emergency Contact Phone Number" SortExpression="EmergencyContactPhoneNumber" />
+                        <asp:BoundField DataField="StartDate" HeaderText="Start Date" SortExpression="StartDate" />
                     </Columns>
                 </asp:GridView>
                 <asp:SqlDataSource ID="sdsViewAllParticipants" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString %>" SelectCommand="SELECT * FROM [Participant]"></asp:SqlDataSource>

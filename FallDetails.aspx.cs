@@ -18,7 +18,8 @@ public partial class FallDetails : System.Web.UI.Page
     int numRowsAffected;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        txtInterviewDate.Text = Convert.ToString(Session["CallDate"]);
+        txtParticipantID.Text = Convert.ToString(Session["PartID"]); 
     }
 
 
@@ -53,7 +54,7 @@ public partial class FallDetails : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text = "Participant ID does not exist or Date is incorrect." //ex.Message;//"Duplicate Entry was not added.";
+                lblStatus.Text = "Participant ID does not exist or Date is incorrect."; //ex.Message;//"Duplicate Entry was not added.";
             }
             conn.Close();
 

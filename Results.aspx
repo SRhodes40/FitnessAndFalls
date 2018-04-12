@@ -96,8 +96,10 @@
 <br />
             </ItemTemplate>
         </asp:DataList>
+        <br />
+        <br />
+    <asp:Button ID="menuBtn" runat="server" OnClick="menuBtn_Click" Text="Main Menu" />
         <asp:SqlDataSource ID="detailsddb" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString %>" SelectCommand="SELECT Participant.ParticipantID, Participant.FirstName, Participant.MiddleInitial, Participant.LastName, Participant.Suffix, Participant.PhoneNumber, Participant.Email, Participant.EmergencyContactFullName, Participant.EmergencyContactPhoneNumber, Participant.StartDate, FallDetails.CallDate, FallCalls.Falls, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth FROM Participant INNER JOIN FallCalls ON Participant.ParticipantID = FallCalls.ParticipantID INNER JOIN FallDetails ON FallCalls.ParticipantID = FallDetails.ParticipantID AND FallCalls.CallDate = FallDetails.CallDate"></asp:SqlDataSource>
     </form>
-    <asp:Button ID="menuBtn" runat="server" OnClick="menuBtn_Click" Text="Main Menu" />
-</body>
+    </body>
 </html>
