@@ -23,7 +23,14 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
         if (this.rblContact.SelectedValue == "1")
         {
             panContact.Visible = true;
-        }else
+            this.SetFocus(btnSubmitFallDiary);
+        }
+        else if (this.rblContact.SelectedValue == "0")
+        {
+            panContact.Visible = false;
+            this.SetFocus(btnSubmitFallDiary);
+        }
+        else
         {
             panContact.Visible = false;
         }
