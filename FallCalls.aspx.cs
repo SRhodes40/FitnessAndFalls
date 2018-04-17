@@ -63,6 +63,7 @@ public partial class FallCalls : System.Web.UI.Page
             {
                 Session["CallDate"] = txtFallCallsCallDate.Text;
                 Session["PartID"] = txtFallCallsParticipantID.Text;
+                
                 Response.Redirect("FallDetails.aspx");
             }
 

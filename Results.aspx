@@ -20,82 +20,61 @@
         &nbsp;
 
         </div>
-        <asp:DataList ID="participantDL" runat="server" Visible="False" >
+        <asp:DataList ID="participantDL" runat="server" Visible="False" DataKeyField="ParticipantID" OnSelectedIndexChanged="participantDL_SelectedIndexChanged"  >
             <ItemTemplate>
-                Participant ID:
+                ParticipantID:
                 <asp:Label ID="ParticipantIDLabel" runat="server" Text='<%# Eval("ParticipantID") %>' />
                 <br />
-                Participant Name:&nbsp 
-                <asp:Label ID="SuffixLabel" runat="server" Text='<%# Eval("Suffix") %>' />
-                &nbsp 
-                <asp:Label ID="FirstNameLabel" runat="server" Text='<%# Eval("FirstName") %>' />
-                &nbsp 
-                
-                <asp:Label ID="MiddleInitialLabel" runat="server" Text='<%# Eval("MiddleInitial") %>' />
-                &nbsp 
-                
-                <asp:Label ID="LastNameLabel" runat="server" Text='<%# Eval("LastName") %>' />
-                
-                
-                
-                <br />
-                Phone Number:
-                <asp:Label ID="PhoneNumberLabel" runat="server" Text='<%# Eval("PhoneNumber") %>' />
-                <br />
-                Email:
-                <asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("Email") %>' />
-                <br />
-                Emergency Contact Full Name:
-                <asp:Label ID="EmergencyContactFullNameLabel" runat="server" Text='<%# Eval("EmergencyContactFullName") %>' />
-                <br />
-                Emergency Contact PhoneNumber:
-                <asp:Label ID="EmergencyContactPhoneNumberLabel" runat="server" Text='<%# Eval("EmergencyContactPhoneNumber") %>' />
-                <br />
-                Start Date:
-                <asp:Label ID="StartDateLabel" runat="server" Text='<%# Eval("StartDate") %>' />
-                <br />
-                Call Date:
+                CallDate:
                 <asp:Label ID="CallDateLabel" runat="server" Text='<%# Eval("CallDate") %>' />
                 <br />
-                Number of Falls:
-                <asp:Label ID="FallsLabel" runat="server" Text='<%# Eval("Falls") %>' />
-                <br />
-                Interviewer Name:
+                InterviewerFirstName:
                 <asp:Label ID="InterviewerFirstNameLabel" runat="server" Text='<%# Eval("InterviewerFirstName") %>' />
-                &nbsp 
-                
+                <br />
+                InterviewerLastName:
                 <asp:Label ID="InterviewerLastNameLabel" runat="server" Text='<%# Eval("InterviewerLastName") %>' />
                 <br />
-                Time of Fall:
+                FallTime:
                 <asp:Label ID="FallTimeLabel" runat="server" Text='<%# Eval("FallTime") %>' />
                 <br />
-                Fall Description:
+                FallDescription:
                 <asp:Label ID="FallDescriptionLabel" runat="server" Text='<%# Eval("FallDescription") %>' />
                 <br />
-                Fall Location:
+                FallLocation:
                 <asp:Label ID="FallLocationLabel" runat="server" Text='<%# Eval("FallLocation") %>' />
                 <br />
-                Injured?:
+                Injured:
                 <asp:Label ID="InjuredLabel" runat="server" Text='<%# Eval("Injured") %>' />
                 <br />
-                Injury Description:
+                InjuryDesc:
                 <asp:Label ID="InjuryDescLabel" runat="server" Text='<%# Eval("InjuryDesc") %>' />
                 <br />
-                Using Assistive Device?:
+                UsingAssistiveDevice:
                 <asp:Label ID="UsingAssistiveDeviceLabel" runat="server" Text='<%# Eval("UsingAssistiveDevice") %>' />
                 <br />
-                Medication Change?:
+                MedicationChange:
                 <asp:Label ID="MedicationChangeLabel" runat="server" Text='<%# Eval("MedicationChange") %>' />
                 <br />
-                Medication Change Description:
+                MedChangeDesc:
                 <asp:Label ID="MedChangeDescLabel" runat="server" Text='<%# Eval("MedChangeDesc") %>' />
                 <br />
-                Month of Fall:
+                FallMonth:
                 <asp:Label ID="FallMonthLabel" runat="server" Text='<%# Eval("FallMonth") %>' />
+                <br />
+                ContactParticipant:
+                <asp:Label ID="ContactParticipantLabel" runat="server" Text='<%# Eval("ContactParticipant") %>' />
+                <br />
+                FallenPastMonth:
+                <asp:Label ID="FallenPastMonthLabel" runat="server" Text='<%# Eval("FallenPastMonth") %>' />
+                <br />
+                HowManyFallsLastMonth:
+                <asp:Label ID="HowManyFallsLastMonthLabel" runat="server" Text='<%# Eval("HowManyFallsLastMonth") %>' />
                 <br />
 <br />
             </ItemTemplate>
         </asp:DataList>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString2 %>" SelectCommand="SELECT FallDetails.ParticipantID, FallDetails.CallDate, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth, FallDiary.ContactParticipant, FallDiary.FallenPastMonth, FallDiary.HowManyFallsLastMonth FROM FallDiary INNER JOIN FallDetails ON FallDiary.ParticipantID = FallDetails.ParticipantID AND FallDiary.InterviewDate = FallDetails.CallDate"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
         <br />
         <br />
     <asp:Button ID="menuBtn" runat="server" OnClick="menuBtn_Click" Text="Main Menu" />
