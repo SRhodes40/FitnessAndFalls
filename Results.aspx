@@ -67,18 +67,22 @@
                 <br />
             </ItemTemplate>
         </asp:DataList>
-            <asp:GridView ID="fallddgv" runat="server" AutoGenerateColumns="False" DataSourceID="detailsddb" AllowPaging="True" AllowSorting="True" DataKeyNames="ParticipantID,CallDate">
+            <asp:GridView ID="fallddgv" runat="server" AutoGenerateColumns="False" DataSourceID="detailsddb" AllowPaging="True" AllowSorting="True">
                 <Columns>
-                    <asp:BoundField DataField="ParticipantID" HeaderText="Participant ID" ReadOnly="True" SortExpression="ParticipantID" />                   
+                    <asp:BoundField DataField="Suffix" HeaderText="Suffix" SortExpression="Suffix" />                   
+                    <asp:BoundField DataField="FirstName" HeaderText="First Name" SortExpression="FirstName" />
+                    <asp:BoundField DataField="MiddleInitial" HeaderText="Middle Initial" SortExpression="MiddleInitial" />
+                    <asp:BoundField DataField="LastName" HeaderText="Last Name" SortExpression="LastName" />
+                    <asp:BoundField DataField="ParticipantID" HeaderText="Participant ID" SortExpression="ParticipantID" />
+                    <asp:BoundField DataField="CallDate" HeaderText="Call Date" SortExpression="CallDate" />
                     <asp:BoundField DataField="InterviewerFirstName" HeaderText="Interviewer First Name" SortExpression="InterviewerFirstName" />
                     <asp:BoundField DataField="InterviewerLastName" HeaderText="Interviewer Last Name" SortExpression="InterviewerLastName" />
-                    <asp:BoundField DataField="CallDate" HeaderText="Call Date" SortExpression="CallDate" ReadOnly="True" />
                     <asp:BoundField DataField="FallTime" HeaderText="Fall Time" SortExpression="FallTime" />
                     <asp:BoundField DataField="FallDescription" HeaderText="Fall Description" SortExpression="FallDescription" />
                     <asp:BoundField DataField="FallLocation" HeaderText="Fall Location" SortExpression="FallLocation" />
                     <asp:BoundField DataField="Injured" HeaderText="Injured?" SortExpression="Injured" />
                     <asp:BoundField DataField="InjuryDesc" HeaderText="Injury Description" SortExpression="InjuryDesc" />
-                    <asp:BoundField DataField="UsingAssistiveDevice" HeaderText="Using Assistive Device?" SortExpression="UsingAssistiveDevice" />
+                    <asp:BoundField DataField="UsingAssistiveDevice" HeaderText="Using Assistivee Device?" SortExpression="UsingAssistiveDevice" />
                     <asp:BoundField DataField="MedicationChange" HeaderText="Medication Change?" SortExpression="MedicationChange" />
                     <asp:BoundField DataField="MedChangeDesc" HeaderText="Medication Change Description" SortExpression="MedChangeDesc" />
                     <asp:BoundField DataField="FallMonth" HeaderText="Fall Month" SortExpression="FallMonth" />
@@ -91,7 +95,7 @@
         <br />
         <br />
     <asp:Button ID="menuBtn" runat="server" OnClick="menuBtn_Click" Text="Main Menu" />
-        <asp:SqlDataSource ID="detailsddb" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString %>" SelectCommand="SELECT FallDetails.* FROM FallDetails"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="detailsddb" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString %>" SelectCommand="SELECT Participant.Suffix, Participant.FirstName, Participant.MiddleInitial, Participant.LastName, FallDetails.ParticipantID, FallDetails.CallDate, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth FROM FallDetails INNER JOIN Participant ON FallDetails.ParticipantID = Participant.ParticipantID"></asp:SqlDataSource>
     </form>
     </body>
 </html>

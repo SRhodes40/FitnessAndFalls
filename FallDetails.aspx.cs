@@ -27,20 +27,24 @@ public partial class FallDetails : System.Web.UI.Page
             txtInterviewerLastName.Text = Convert.ToString(Session["InterLast"]);
             txtInterviewerFirstName.Text = Convert.ToString(Session["InterFirst"]);
             numfalls = Convert.ToInt32(Session["NumFalls"]);
-            if (numfalls > 0)
-            {
-                numfalls--;
-                Session["NumFalls"] = numfalls;
-            }
-            else
-            {
-                Response.Redirect("MainMenu.aspx");
-            }
+           
         }
         else
         {
             Response.Redirect("Default.aspx");
         }
+        if (numfalls > 0)
+        {
+            numfalls--;
+            Session["NumFalls"] = numfalls;
+        }
+        else
+        {
+            Response.Redirect("MainMenu.aspx");
+            //Response.Write("move to next page");
+
+        }
+
     }
 
 
@@ -75,9 +79,22 @@ public partial class FallDetails : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text =ex.Message; //"Participant ID does not exist or Date is incorrect."; 
+                lblStatus.Text = "Duplicate Entry was not added."; //"Participant ID does not exist or Date is incorrect."; 
                //"Duplicate Entry was not added.";
             }
+          
+            rblTimeOfDay.ClearSelection();
+            rblMonthOfFall.ClearSelection();
+            txtDescribeFall.Text = "";
+            txtFallLocation.Text = "";
+            rblResultOfFall.ClearSelection();
+            txtDescribeInjury.Text = "";
+            rblAssistiveDevice.ClearSelection();
+            rblChangePrescription.ClearSelection();
+            txtPrescriptionChanged.Text = "";
+           
+
+
             conn.Close();
 
         } // end of Insert
