@@ -27,13 +27,25 @@
 
         <p class="txtQuestions">Test Location<span style="color: rgb(219, 79, 73)">*</span></p>
         <asp:RadioButtonList class="txtMargin" ID="rblLocation" runat="server">
-                <asp:ListItem>University of Mount Union</asp:ListItem>
-                <asp:ListItem>Alliance Senior Center</asp:ListItem>
+                <asp:ListItem Text="University of Mount Union" Value="0" />
+                <asp:ListItem Text="Alliance Senior Center" Value="1" />
             </asp:RadioButtonList>  
-     
+        <p class="txtQuestions">Is this a baseline test?<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList class="txtMargin" ID="rblBaseline" runat="server">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList> 
     
-    
+    <asp:Panel ID="panBaseline" runat="server"> 
+        <p class="txtTitle">Informed Consent</p>
+        <p id="definition">Consent Form:<br />(https://drive.google.com/open?id=11GuH4mD_43U01voUWH2WXj14-GK7pUxh)</p>
+        <p class="txtQuestions">I have read (or someone has read to me) this form and I am aware that I am being asked to participate in a research study. <span style="color: rgb(219, 79, 73)">*</span></p><br />
+        <p id="definition">Type your full name to indicate you agree with this statement</p>
+        <asp:TextBox ID="TextBox1" runat="server" class="txtMargin"></asp:TextBox>
+
+        </asp:Panel>
      <div class="container">
+     
         <p class="txtTitle">Informed Consent</p>
         <p id="definition">Consent Form:<br />(https://drive.google.com/open?id=11GuH4mD_43U01voUWH2WXj14-GK7pUxh)</p>
         <p class="txtQuestions">I have read (or someone has read to me) this form and I am aware that I am being asked to participate in a research study. <span style="color: rgb(219, 79, 73)">*</span></p><br />
@@ -56,11 +68,7 @@
      <div class="container">
         <p class="txtTitle">Personal Information</p>
 
-        <p class="txtQuestions">Is this a baseline test?<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList class="txtMargin" ID="rblBaseline" runat="server">
-                <asp:ListItem Text="No" Value="0" />
-                <asp:ListItem Text="Yes" Value="1" />
-            </asp:RadioButtonList>  
+         
        
         <p class="txtQuestions">Participant ID<span style="color: rgb(219, 79, 73)">*</span></p><br />
         <p id="definition">FOR NEW PARTICIPANTS!!!: Enter the 8-digit baseline test date + the 2 digit hour they were tested (00 - 23) + their age (e.g. a test that started january 17th 2018 at 8am for a 78 year old individual would result in the following participant ID: 011720180878). FOR RETURNING PARTICIPANTS: Enter their existing participant ID. Email Dr. Saunders at saundenw@mountunion.edu if the ID is unknown to you or the participant.</p>
@@ -88,6 +96,36 @@
      </div>
         
      <div class="container">
+       <p class="txtTitle">Demographic Information</p>
+       <p class="txtQuestions">Age<span style="color: rgb(219, 79, 73)">*</span></p><br />
+            <asp:TextBox ID="txtAge" runat="server" class="txtMargin"></asp:TextBox>
+        <p class="txtQuestions">Gender<span style="color: rgb(219, 79, 73)">*</span></p>
+               <asp:RadioButtonList ID="rblGender" runat="server" class="txtMargin">
+               <asp:ListItem Text="Female" Value="0" />
+               <asp:ListItem Text="Male" Value="1" />
+               </asp:RadioButtonList>
+        <p class="txtQuestions">What is your gross annual household income?<span style="color: rgb(219, 79, 73)">*</span></p>
+            <asp:RadioButtonList ID="rblIncome" runat="server" class="txtMargin">
+                <asp:ListItem Text="< 20,000" Value="0" />
+                <asp:ListItem Text="$20,000 - $40,000" Value="1" />
+                <asp:ListItem Text="$40,000 - $60,000" Value="2" />
+                <asp:ListItem Text="> $60,000" Value="3" />
+                <asp:ListItem Text="Prefer not to answer" Value="4" />
+                
+            </asp:RadioButtonList>
+        <p class="txtQuestions">Ethnicity<span style="color: rgb(219, 79, 73)">*</span></p>
+            <asp:RadioButtonList ID="rblEthnicity" runat="server" class="txtMargin">
+                <asp:ListItem Text="White/Caucasian" Value="0" />    
+                <asp:ListItem Text="Hispanic/Latino" Value="1" />  
+                <asp:ListItem Text="Black/African American" Value="2" />  
+                <asp:ListItem Text="Asian" Value="3" />  
+                <asp:ListItem Text="Other" Value="4" />  
+                <asp:ListItem Text="Prefer not to answer" Value="5" />  
+            </asp:RadioButtonList>
+         </div>
+   
+
+        <div class="container">
         <p class="txtTitle">Activity History</p>
 
         <p class="txtQuestions">Do you have a known/diagnosed health problem(s) that limit your activity?<span style="color: rgb(219, 79, 73)">*</span></p>
@@ -120,45 +158,88 @@
      <div class="container">
         <p class="txtTitle">Medical History</p>
 
-        <p class="txtQuestions">Have you ever been diagnosed with any heart disease, heart murmur, chest pain, palpitations, or heart attack? Yes or no? If yes, please select all that apply<span style="color: rgb(219, 79, 73)">*</span></p>
-           <asp:CheckBoxList ID="cblHeart" runat="server" class="txtMargin">
-               <asp:ListItem>Heart Disease</asp:ListItem>
-               <asp:ListItem>Heart Murmur</asp:ListItem>
-               <asp:ListItem>Chest Pain</asp:ListItem>
-               <asp:ListItem>Palpitations</asp:ListItem>
-               <asp:ListItem>Heart Attack</asp:ListItem>
-               <asp:ListItem>None</asp:ListItem>
-           </asp:CheckBoxList>
+        <p class="txtQuestions">Have you ever been diagnosed with any of the following?<span style="color: rgb(219, 79, 73)">*</span></p>
+          
+        <p class="txtQuestions">Heart Disease<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblHeartDisease" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
+        <p class="txtQuestions">Heart Murmur<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblHeartMurmur" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
+        <p class="txtQuestions">Chest Pain<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblChestPain" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
+        <p class="txtQuestions">Palpitations<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblPalpitations" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
+        <p class="txtQuestions">Heart Attack<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblHeartAttack" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
+        <p class="txtQuestions">None<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblNoneDiagnosed" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
 
          <p class="txtQuestions">Do you have high blood pressure?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblHighBloodPressure" runat="server" class="txtMargin">
-                <asp:ListItem>Yes, Controlled</asp:ListItem>
-                <asp:ListItem>Yes, Uncontrolled</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, controlled" Value="1" />
+                <asp:ListItem Text="Yes, uncontrolled" Value="1" />
             </asp:RadioButtonList>
          <p class="txtQuestions">Do you have a medical condition which requires medication to manage?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblConditionMedication" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
          <p class="txtQuestions">Have you ever had orthopedic, cardiac, or any other major surgeries?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblMajorSurgery" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
          <p class="txtQuestions">Have you ever been diagnosed with a cognitive impairment or dementia?<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblDementia" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
+         <p class="txtQuestions">If you answered yes to any of the questions questions above, please explain.<span style="color: rgb(219, 79, 73)">*</span></p>
+         <br /> <asp:TextBox ID="txtYesExplain" runat="server" class="txtMargin"></asp:TextBox>
+    
          <p class="txtQuestions">Do you use any of the following to move about?<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:CheckBoxList ID="cblDeviceAssist" runat="server" class="txtMargin">
-               <asp:ListItem>Wheelchair</asp:ListItem>
-               <asp:ListItem>Cane</asp:ListItem>
-               <asp:ListItem>Walker</asp:ListItem>
-               <asp:ListItem>Palpitations</asp:ListItem>
-               <asp:ListItem>None</asp:ListItem>
-           </asp:CheckBoxList>
+         
+         <p class="txtQuestions">Wheelchair<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblWheelchair" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
+         <p class="txtQuestions">Cane<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblCane" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
+         <p class="txtQuestions">Walker<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblWalker" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
+         <p class="txtQuestions">None<span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblNoDevices" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
+            </asp:RadioButtonList>
+         <p class="txtQuestions">If you do use any of the devices listed above, please explain.<span style="color: rgb(219, 79, 73)">*</span></p>
+         <br /> <asp:TextBox ID="txtDevicesExplain" runat="server" class="txtMargin"></asp:TextBox>
+    
      </div>
 
      <div>
@@ -169,16 +250,18 @@
 
      <div class="container">
          <p class="txtTitle">Fall History    <p class="txtQuestions">Have you experienced a fall in the past 6 months?<span style="color: rgb(219, 79, 73)">*</span></p>
+         <p id="definition">A fall is defined as "an event which results in a person coming to rest unintentionally on the ground or other lower level." -Tinetti </p>
+        
          <asp:RadioButtonList ID="rblFall6Months" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
          <p class="txtQuestions">If you have fallen within the past 6 months, how many times did you fall?</p><br />
         <asp:TextBox ID="txtTimesFell" runat="server" class="txtMargin"></asp:TextBox>
         <p class="txtQuestions">If you have fallen within the past 6 months, did you experience any injuries?</p>
          <asp:RadioButtonList ID="rblFallenInjury" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
         <p class="txtQuestions">If you have fallen within the past 6 months, and you experienced an injury, please explain.</p><br />
         <asp:TextBox ID="txtFallenInjury" runat="server" class="txtMargin"></asp:TextBox>
@@ -191,236 +274,498 @@
         
         <p class="txtQuestions">1a. Take care of own personal needs-like dressing yourself<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS1" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">1b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS1" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS1Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS1Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS1Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS1Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS1Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
         <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS1" runat="server" class="txtMargin"></asp:TextBox>
+        <asp:TextBox ID="txtCPFS1Other" runat="server" class="txtMargin"></asp:TextBox>
       
         <p class="txtQuestions">2a. Bathe yourself, using tub or shower<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS2" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">2b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS2" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS2Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS2Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS2Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFSFlex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFSOther" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
         <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS2" runat="server" class="txtMargin"></asp:TextBox>
-     
+        <asp:TextBox ID="txtCPFS2Other" runat="server" class="txtMargin"></asp:TextBox>
+      
         <p class="txtQuestions">3a. Climb up and down a flight or stairs (like to a second story in a house)<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS3" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">3b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS3" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
-        <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS3" runat="server" class="txtMargin"></asp:TextBox>
-     
-        <p class="txtQuestions">4a. Walk outside one or two blocks<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS4" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
-        <p class="txtQuestions">4b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS4" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
-        <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS4" runat="server" class="txtMargin"></asp:TextBox>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS3Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
 
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS3Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS3Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS3Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS3Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
+        <p class="txtQuestions">If other, please explain</p><br />
+        <asp:TextBox ID="txtCPFS3Other" runat="server" class="txtMargin"></asp:TextBox>
+      
+       <p class="txtQuestions">4a. Walk outside one or two blocks <span style="color: rgb(219, 79, 73)">*</span></p>
+         <asp:RadioButtonList ID="rblCPFS4" runat="server" class="txtMargin">
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
+        <p class="txtQuestions">4b. Why are you unable? OR Why do you have difficulty?</p>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS4Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS4Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS4Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS4Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS4Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
+        <p class="txtQuestions">If other, please explain</p><br />
+        <asp:TextBox ID="txtCPFS4Other" runat="server" class="txtMargin"></asp:TextBox>
+      
         <p class="txtQuestions">5a. Do light household activities - like cooking, dusting, washing dishes, sweeping a walkway<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS5" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">5b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS5" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS5Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS5Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS5Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS5Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS5Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
         <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS5" runat="server" class="txtMargin"></asp:TextBox>
-     
-        <p class="txtQuestions">6a. Do own shopping for groceries or clothes<span style="color: rgb(219, 79, 73)">*</span></p>
+        <asp:TextBox ID="txtCPFS5Other" runat="server" class="txtMargin"></asp:TextBox>
+      
+       <p class="txtQuestions">6a. Do own shopping for groceries or clothes<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS6" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">6b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS6" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
-        <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS6" runat="server" class="txtMargin"></asp:TextBox>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS6Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
 
-        <p class="txtQuestions">7a. Walk 1/2 mile (6-7 blocks)<span style="color: rgb(219, 79, 73)">*</span></p>
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS6Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS6Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS6Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS6Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
+        <p class="txtQuestions">If other, please explain</p><br />
+        <asp:TextBox ID="txtCPFS6Other" runat="server" class="txtMargin"></asp:TextBox>
+      
+        <p class="txtQuestions">7a. Walk 1/2 mile (6-7 blocks) <span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS7" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">7b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS7" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
-        <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS7" runat="server" class="txtMargin"></asp:TextBox>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS7Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
 
-        <p class="txtQuestions">8a. Walk 1 mile (12-14 blocks)<span style="color: rgb(219, 79, 73)">*</span></p>
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS7Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS7Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS7Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS7Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
+        <p class="txtQuestions">If other, please explain</p><br />
+        <asp:TextBox ID="txtCPFS7Other" runat="server" class="txtMargin"></asp:TextBox>
+      
+        <p class="txtQuestions">8a. Walk 1 mile (12-14 blocks) <span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS8" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">8b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS8" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
-        <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS8" runat="server" class="txtMargin"></asp:TextBox>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS8Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
 
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS8Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS8Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS8Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS8Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
+        <p class="txtQuestions">If other, please explain</p><br />
+        <asp:TextBox ID="txtCPFS8Other" runat="server" class="txtMargin"></asp:TextBox>
+      
         <p class="txtQuestions">9a. Lift and carry 10 pounds (full bag of groceries)<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS9" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">9b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS9" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
-        <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS9" runat="server" class="txtMargin"></asp:TextBox>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS9Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
 
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS9Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS9Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS9Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS9Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
+        <p class="txtQuestions">If other, please explain</p><br />
+        <asp:TextBox ID="txtCPFS9Other" runat="server" class="txtMargin"></asp:TextBox>
+      
         <p class="txtQuestions">10a. Lift and carry 25 pounds (medium to large suitcase)<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS10" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">10b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS10" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
-        <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS10" runat="server" class="txtMargin"></asp:TextBox>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS10Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
 
-        <p class="txtQuestions">11a. Do most heavy household chores - like scrubbing floors, vacuuming, raking leaves<span style="color: rgb(219, 79, 73)">*</span></p>
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS10Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS10Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS10Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS10Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
+        <p class="txtQuestions">If other, please explain</p><br />
+        <asp:TextBox ID="txtCPFS10Other" runat="server" class="txtMargin"></asp:TextBox>
+      
+       <p class="txtQuestions">11a. Do most heavy household chores - like scrubbing floors, vacuuming, raking leaves<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS11" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
         <p class="txtQuestions">11b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS11" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
-        <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS11" runat="server" class="txtMargin"></asp:TextBox>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS11Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
 
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS11Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS11Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS11Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS11Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
+        <p class="txtQuestions">If other, please explain</p><br />
+        <asp:TextBox ID="txtCPFS11Other" runat="server" class="txtMargin"></asp:TextBox>
+      
         <p class="txtQuestions">12a. Do strenuous activities - like hiking, digging in garden, moving heavy objects, bicycling, aerobic dance exercises, strenuous calisthenics, etc.<span style="color: rgb(219, 79, 73)">*</span></p>
          <asp:RadioButtonList ID="rblCPFS12" runat="server" class="txtMargin">
-                <asp:ListItem>No</asp:ListItem>
-                <asp:ListItem>Yes, with difficulty</asp:ListItem>
-                <asp:ListItem>Yes</asp:ListItem>
-            </asp:RadioButtonList>
-        <p class="txtQuestions">10b. Why are you unable? OR Why do you have difficulty?</p>
-           <asp:CheckBoxList ID="cblCPFS12" runat="server" class="txtMargin">
-               <asp:ListItem>Health problems</asp:ListItem>
-               <asp:ListItem>Chronic pain</asp:ListItem>
-               <asp:ListItem>Lack of strength or endurance</asp:ListItem>
-               <asp:ListItem>Lack of flexibility or balance</asp:ListItem>
-               <asp:ListItem>Other</asp:ListItem>
-           </asp:CheckBoxList>
-        <p class="txtQuestions">If other, please explain</p><br />
-        <asp:TextBox ID="txtCPFS12" runat="server" class="txtMargin"></asp:TextBox>
-      </div>
+                <asp:ListItem Text="No" Value="0" />
+                <asp:ListItem Text="Yes, with difficulty" Value="1" />
+                <asp:ListItem Text="Yes" Value="2" />
+         </asp:RadioButtonList>
+        <p class="txtQuestions">12b. Why are you unable? OR Why do you have difficulty?</p>
+           
+               <p class="txtQuestions">Health Problems</p>
+               <asp:RadioButtonList ID="rblCPFS12Health" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
 
-      <div class="container">
-       <p class="txtTitle">Demographic Information</p>
-       <p class="txtQuestions">Age<span style="color: rgb(219, 79, 73)">*</span></p><br />
-            <asp:TextBox ID="txtAge" runat="server" class="txtMargin"></asp:TextBox>
-        <p class="txtQuestions">Gender<span style="color: rgb(219, 79, 73)">*</span></p>
-            <asp:RadioButtonList ID="rblGender" runat="server" class="txtMargin">
-                <asp:ListItem>Male</asp:ListItem>
-                <asp:ListItem>Female</asp:ListItem>
-            </asp:RadioButtonList> 
-        <p class="txtQuestions">What is your gross annual household income?<span style="color: rgb(219, 79, 73)">*</span></p>
-            <asp:RadioButtonList ID="rblIncome" runat="server" class="txtMargin">
-                <asp:ListItem>< $20,000</asp:ListItem>
-                <asp:ListItem>$20,000 - $40,000</asp:ListItem>
-                <asp:ListItem>$40,000 - $60,000</asp:ListItem>
-                <asp:ListItem>> $60,000</asp:ListItem>
-                <asp:ListItem>Prefer not to answer</asp:ListItem>
-            </asp:RadioButtonList>
-        <p class="txtQuestions">Ethnicity<span style="color: rgb(219, 79, 73)">*</span></p>
-            <asp:RadioButtonList ID="rblEthnicity" runat="server" class="txtMargin">
-                <asp:ListItem>White/Caucasian</asp:ListItem>
-                <asp:ListItem>Hispanic/Latino</asp:ListItem>
-                <asp:ListItem>Black/African American</asp:ListItem>
-                <asp:ListItem>Asian</asp:ListItem>
-                <asp:ListItem>Other</asp:ListItem>
-                <asp:ListItem>Prefer not to answer</asp:ListItem>
-            </asp:RadioButtonList>
-     </div>
+               <p class="txtQuestions">Chronic Pain</p>
+               <asp:RadioButtonList ID="rblCPFS12Pain" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList>
+
+               <p class="txtQuestions">Lack of Strength or Endurance</p>
+               <asp:RadioButtonList ID="rblCPFS12Strength" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+         
+               <p class="txtQuestions">Lack of Flexibility or Balance</p>
+               <asp:RadioButtonList ID="rblCPFS12Flex" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+
+               <p class="txtQuestions">Other</p>
+               <asp:RadioButtonList ID="rblCPFS12Other" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
+               </asp:RadioButtonList> 
+           
+        <p class="txtQuestions">If other, please explain</p><br />
+        <asp:TextBox ID="txtCPFS12Other" runat="server" class="txtMargin"></asp:TextBox>
+       </div>
+
+      
      <div class="container">
        <p class="txtTitle">Resting Vitals</p>
        <p class="txtQuestions">Resting pulse rate (bpm)</p><br />
@@ -449,8 +794,8 @@
        <p class="txtTitle">Grip Strength</p>
        <p class="txtQuestions">Dominant hand<span style="color: rgb(219, 79, 73)">*</span></p>
             <asp:RadioButtonList ID="rblGripStrength" runat="server" class="txtMargin">
-                <asp:ListItem>Right</asp:ListItem>
-                <asp:ListItem>Left</asp:ListItem>
+                <asp:ListItem Text="Right" Value="0" />
+               <asp:ListItem Text="Left" Value="1" />
             </asp:RadioButtonList> 
        <p class="txtQuestions">Grip strength (kg)</p>
          <p id="definition">Enter the best of two measurements</p><br />
@@ -461,8 +806,8 @@
        <p class="txtTitle">Chair Stand</p>
        <p class="txtQuestions">Was able to complete the chair stand task</p>
             <asp:RadioButtonList ID="rblChairStand" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList> 
        <p class="txtQuestions">Number of Chair Stands</p><br />
             <asp:TextBox ID="txtChairStands" runat="server" class="txtMargin"></asp:TextBox>
@@ -482,8 +827,8 @@
        <p class="txtTitle">8-Ft Up-and-Go</p>
        <p class="txtQuestions">Was able to complete the up-and-go task</p>
             <asp:RadioButtonList ID="rblUpAndGo" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList> 
        <p class="txtQuestions">Total Time (s)</p><br />
             <asp:TextBox ID="txtUpAndGoTime" runat="server" class="txtMargin"></asp:TextBox>
@@ -502,16 +847,16 @@
      <div class="container">
        <p class="txtTitle">Lift and Carry</p>
        <p class="txtQuestions">Was able to complete the 10 pound lift and carry task</p>
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+            <asp:RadioButtonList ID="rbl10LAndC" runat="server" class="txtMargin">
+                 <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList> 
        <p class="txtQuestions">10 Pound Lift and carry time (s)</p><br />
             <asp:TextBox ID="txt10LAndCTime" runat="server" class="txtMargin"></asp:TextBox>
        <p class="txtQuestions">Was able to complete the 25 pound lift and carry task</p>
-            <asp:RadioButtonList ID="RadioButtonList2" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+            <asp:RadioButtonList ID="rbl25LAndC" runat="server" class="txtMargin">
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList> 
        <p class="txtQuestions">25 Pound Lift and carry time (s)</p><br />
             <asp:TextBox ID="txt25LAndCTime" runat="server" class="txtMargin"></asp:TextBox>
@@ -521,14 +866,14 @@
        <p class="txtTitle">400 Meter Walk Test</p>
        <p class="txtQuestions">Was able to complete the 400 meters without stopping<span style="color: rgb(219, 79, 73)">*</span></p>
             <asp:RadioButtonList ID="rbl400Meters" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+               <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList>
        <p class="txtQuestions">Course length in meters</p>
             <asp:RadioButtonList ID="rblCourseLength" runat="server" class="txtMargin">
-                <asp:ListItem>16</asp:ListItem>
-                <asp:ListItem>20</asp:ListItem>
-                <asp:ListItem>25</asp:ListItem>
+               <asp:ListItem Text="16" Value="16" />
+               <asp:ListItem Text="20" Value="20" />
+               <asp:ListItem Text="25" Value="25" />
             </asp:RadioButtonList> 
        <p class="txtQuestions">Time to complete 400 meters (s)</p><br />
             <asp:TextBox ID="txtTime400Meters" runat="server" class="txtMargin"></asp:TextBox>
@@ -570,8 +915,8 @@
        <p class="txtTitle">Overall Performance</p>
         <p class="txtQuestions">Participant was able to complete all tests without error or modification<span style="color: rgb(219, 79, 73)">*</span></p>
             <asp:RadioButtonList ID="rblOverallPerformance" runat="server" class="txtMargin">
-                <asp:ListItem>Yes</asp:ListItem>
-                <asp:ListItem>No</asp:ListItem>
+                <asp:ListItem Text="No" Value="0" />
+               <asp:ListItem Text="Yes" Value="1" />
             </asp:RadioButtonList> 
          <p class="txtQuestions">If there were any test errors or modifications, please explain here</p><br />
             <asp:TextBox ID="txtOverallPerformance" runat="server" class="txtMargin"></asp:TextBox>
