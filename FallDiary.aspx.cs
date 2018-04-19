@@ -61,10 +61,6 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
                 if (numRowsAffected == 1)
                 {
                     lblStatus.Text = "Submitted";
-
-
-
-
                 }
                 else
                 {
@@ -86,10 +82,6 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
                 Session["Numfalls"] = tempint;
                 Response.Redirect("FallDetails.aspx");
             }
-            
-            
-
-
         } // end of Insert
     }
         private string getConnectionString()
@@ -100,6 +92,7 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
 
     protected void btnFallDiaryLogout_Click(object sender, EventArgs e)
     {
-        Response.Redirect("~/Login.aspx");
+        Session.Abandon();
+        Response.Redirect("~/Default.aspx");
     }
 }
