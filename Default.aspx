@@ -5,15 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Fitness and Falls Login</title>
-    <style type="text/css">
-        .auto-style1 {
-            height: 34px;
-        }
-    </style>
+  <link rel="stylesheet" href="Default.css" />
 </head>
-<body style="background-color: thistle">
+<body>
     <form id="form1" runat="server">
-        <h2 style="margin-top; text-align:center">Login to Fitness and Falls</h2>
+        <h1>Login to Fitness and Falls</h1>
         <table style="margin:auto; border:5px solid white">
             <tr>
                 <td><asp:Label ID="lblUsername" runat="server" Text="Username:"></asp:Label>
