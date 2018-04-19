@@ -59,8 +59,11 @@ public partial class FallCalls : System.Web.UI.Page
            
             conn.Close();
             int tempint = Convert.ToInt32(txtFallCallsFalls.Text);
-            if(tempint >= 1)
+            if (tempint >= 1)
             {
+                Session["CallDate"] = txtFallCallsCallDate.Text;
+                Session["PartID"] = txtFallCallsParticipantID.Text;
+                
                 Response.Redirect("FallDetails.aspx");
             }
 
@@ -70,4 +73,9 @@ public partial class FallCalls : System.Web.UI.Page
     {
         return ConfigurationManager.ConnectionStrings["FitnessAndFallsConnectionString"].ConnectionString;
     } // end of getConnectionString
+
+    protected void menuBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MainMenu.aspx");
+    }
 }

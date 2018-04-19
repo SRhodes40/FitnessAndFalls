@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Annual Data Collection</title>
-    <link rel="stylesheet" href="fallDiary.css" />
+    <link rel="stylesheet" href="annualData.css" />
     
 </head>
 <body>
@@ -922,8 +922,9 @@
             <asp:TextBox ID="txtOverallPerformance" runat="server" class="txtMargin"></asp:TextBox>
       </div>
       <div style="text-align: center;">
-                    <asp:Button ID="btnSubmitAnnualForm" runat="server" Text="Submit" OnClick="btnSubmit_Click" /><br /><br />
-                    <asp:Button ID="btnAnnualFormLogout" runat="server" OnClick="btnAnnualFormLogout_Click" Text="Logout" />
+                    <asp:Button ID="btnSubmitAnnualForm" runat="server" Text="Submit" OnClick="btnSubmit_Click" />&nbsp;<asp:Button ID="menuBtn" runat="server" Text="Main Menu" OnClick="menuBtn_Click" />
+&nbsp;<asp:Button ID="btnAnnualFormLogout" runat="server" OnClick="btnAnnualFormLogout_Click" Text="Logout" />
+                    <br /><br />
       </div>
             <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
      </div>

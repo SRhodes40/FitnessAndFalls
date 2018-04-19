@@ -23,7 +23,14 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
         if (this.rblContact.SelectedValue == "1")
         {
             panContact.Visible = true;
-        }else
+            this.SetFocus(btnSubmitFallDiary);
+        }
+        else if (this.rblContact.SelectedValue == "0")
+        {
+            panContact.Visible = false;
+            this.SetFocus(btnSubmitFallDiary);
+        }
+        else
         {
             panContact.Visible = false;
         }
@@ -62,7 +69,20 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
                 lblStatus.Text = ex.Message;//"Person not found.";
             }
             conn.Close();
+            int tempint = Convert.ToInt32(txtNumFallsFallDiary.Text);
+            if (tempint >= 1)
+            {
+                Session["CallDate"] = txtInterviewDate.Text;
+                Session["PartID"] = txtParticipantID.Text;
+                Session["InterLast"] = txtInterviewerLastName.Text;
+                Session["InterFirst"] = txtInterviewerFirstName.Text;
+                Session["Numfalls"] = tempint;
+                Response.Redirect("FallDetails.aspx");
+            }
             
+            
+
+
         } // end of Insert
     }
         private string getConnectionString()

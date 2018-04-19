@@ -85,18 +85,14 @@
                     <asp:ListItem Text="Yes" Value ="1" />
                 </asp:RadioButtonList>
 
-                <p class="txtQuestions">If yes, what changes were made? <span style="color: rgb(219, 79, 73)">*</span></p><br />
+                <p class="txtQuestions">If yes, what changes were made? </p><br />
                 <asp:TextBox ID="txtPrescriptionChanged" runat="server"></asp:TextBox><br /><br /><hr /><br />
 
                 <div style="text-align: center;">
 
                     <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" OnClick="btnSubmitFallDetails_Click" />
+                    &nbsp;<asp:Button ID="menuBtn" runat="server" Text="Main Menu" OnClick="menuBtn_Click" />
                     <br />
-                    
-
-                    
-
-
                 </div>
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
             </div>

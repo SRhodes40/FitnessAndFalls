@@ -16,9 +16,24 @@ public partial class FallDetails : System.Web.UI.Page
     string connectionString;
     ListItem listItem;
     int numRowsAffected;
+    int numfalls;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        txtInterviewDate.Text = Convert.ToString(Session["CallDate"]);
+        txtParticipantID.Text = Convert.ToString(Session["PartID"]);
+        txtInterviewerLastName.Text = Convert.ToString(Session["InterLast"]);
+        txtInterviewerFirstName.Text = Convert.ToString(Session["InterFirst"]);
+        numfalls = Convert.ToInt32(Session["NumFalls"]);
+        if(numfalls > 0)
+        {
+            numfalls--;
+            Session["NumFalls"] = numfalls;
+        }
+        else
+        {
+            Response.Redirect("MainMenu.aspx");
+        }
     }
 
 
@@ -53,16 +68,23 @@ public partial class FallDetails : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text = ex.Message;//"Duplicate Entry was not added.";
+                lblStatus.Text =ex.Message; //"Participant ID does not exist or Date is incorrect."; 
+               //"Duplicate Entry was not added.";
             }
             conn.Close();
 
         } // end of Insert
+        
     }
         private string getConnectionString()
         {
             return ConfigurationManager.ConnectionStrings["FitnessAndFallsConnectionString"].ConnectionString;
         } // end of getConnectionString
+
+    protected void menuBtn_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MainMenu.aspx");
     }
+}
 
 
