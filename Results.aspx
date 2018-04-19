@@ -17,68 +17,80 @@
             <br />
             <asp:Button ID="resultsBtn" runat="server" Text="Search Participant" OnClick="resultsBtn_Click" />
 
-        &nbsp;
-
-        </div>
-        <asp:DataList ID="participantDL" runat="server" Visible="False" DataKeyField="ParticipantID" OnSelectedIndexChanged="participantDL_SelectedIndexChanged"  >
+        &nbsp;<br />
+            <br />
+            <asp:Label ID="fallddResultsLbl" runat="server" Text="Fall Details and Fall Diary Results:"></asp:Label>
+            <br />
+&nbsp;<asp:DataList ID="participantDL" runat="server" Visible="False" DataKeyField="ParticipantID" OnSelectedIndexChanged="participantDL_SelectedIndexChanged" GridLines="Both"   >
             <ItemTemplate>
-                ParticipantID:
+                Participant ID:
                 <asp:Label ID="ParticipantIDLabel" runat="server" Text='<%# Eval("ParticipantID") %>' />
                 <br />
-                CallDate:
-                <asp:Label ID="CallDateLabel" runat="server" Text='<%# Eval("CallDate") %>' />
-                <br />
-                InterviewerFirstName:
+                
+                Interviewer First Name:
                 <asp:Label ID="InterviewerFirstNameLabel" runat="server" Text='<%# Eval("InterviewerFirstName") %>' />
                 <br />
-                InterviewerLastName:
+                Interviewer Last Name:
                 <asp:Label ID="InterviewerLastNameLabel" runat="server" Text='<%# Eval("InterviewerLastName") %>' />
                 <br />
-                FallTime:
+                Call Date:
+                <asp:Label ID="CallDateLabel" runat="server" Text='<%# Eval("CallDate") %>' />
+                <br />
+                Fall Time:
                 <asp:Label ID="FallTimeLabel" runat="server" Text='<%# Eval("FallTime") %>' />
                 <br />
-                FallDescription:
+                Fall Description:
                 <asp:Label ID="FallDescriptionLabel" runat="server" Text='<%# Eval("FallDescription") %>' />
                 <br />
-                FallLocation:
+                Fall Location:
                 <asp:Label ID="FallLocationLabel" runat="server" Text='<%# Eval("FallLocation") %>' />
                 <br />
-                Injured:
+                Injured?:
                 <asp:Label ID="InjuredLabel" runat="server" Text='<%# Eval("Injured") %>' />
                 <br />
-                InjuryDesc:
+                Injury Description:
                 <asp:Label ID="InjuryDescLabel" runat="server" Text='<%# Eval("InjuryDesc") %>' />
                 <br />
-                UsingAssistiveDevice:
+                Using Assistive Device?:
                 <asp:Label ID="UsingAssistiveDeviceLabel" runat="server" Text='<%# Eval("UsingAssistiveDevice") %>' />
                 <br />
-                MedicationChange:
+                Medication Change?:
                 <asp:Label ID="MedicationChangeLabel" runat="server" Text='<%# Eval("MedicationChange") %>' />
                 <br />
-                MedChangeDesc:
+                Medication Change Description:
                 <asp:Label ID="MedChangeDescLabel" runat="server" Text='<%# Eval("MedChangeDesc") %>' />
                 <br />
-                FallMonth:
+                Fall Month:
                 <asp:Label ID="FallMonthLabel" runat="server" Text='<%# Eval("FallMonth") %>' />
                 <br />
-                ContactParticipant:
-                <asp:Label ID="ContactParticipantLabel" runat="server" Text='<%# Eval("ContactParticipant") %>' />
                 <br />
-                FallenPastMonth:
-                <asp:Label ID="FallenPastMonthLabel" runat="server" Text='<%# Eval("FallenPastMonth") %>' />
-                <br />
-                HowManyFallsLastMonth:
-                <asp:Label ID="HowManyFallsLastMonthLabel" runat="server" Text='<%# Eval("HowManyFallsLastMonth") %>' />
-                <br />
-<br />
             </ItemTemplate>
         </asp:DataList>
+            <asp:GridView ID="fallddgv" runat="server" AutoGenerateColumns="False" DataSourceID="detailsddb" AllowPaging="True" AllowSorting="True" DataKeyNames="ParticipantID,CallDate">
+                <Columns>
+                    <asp:BoundField DataField="ParticipantID" HeaderText="Participant ID" ReadOnly="True" SortExpression="ParticipantID" />                   
+                    <asp:BoundField DataField="InterviewerFirstName" HeaderText="Interviewer First Name" SortExpression="InterviewerFirstName" />
+                    <asp:BoundField DataField="InterviewerLastName" HeaderText="Interviewer Last Name" SortExpression="InterviewerLastName" />
+                    <asp:BoundField DataField="CallDate" HeaderText="Call Date" SortExpression="CallDate" ReadOnly="True" />
+                    <asp:BoundField DataField="FallTime" HeaderText="Fall Time" SortExpression="FallTime" />
+                    <asp:BoundField DataField="FallDescription" HeaderText="Fall Description" SortExpression="FallDescription" />
+                    <asp:BoundField DataField="FallLocation" HeaderText="Fall Location" SortExpression="FallLocation" />
+                    <asp:BoundField DataField="Injured" HeaderText="Injured?" SortExpression="Injured" />
+                    <asp:BoundField DataField="InjuryDesc" HeaderText="Injury Description" SortExpression="InjuryDesc" />
+                    <asp:BoundField DataField="UsingAssistiveDevice" HeaderText="Using Assistive Device?" SortExpression="UsingAssistiveDevice" />
+                    <asp:BoundField DataField="MedicationChange" HeaderText="Medication Change?" SortExpression="MedicationChange" />
+                    <asp:BoundField DataField="MedChangeDesc" HeaderText="Medication Change Description" SortExpression="MedChangeDesc" />
+                    <asp:BoundField DataField="FallMonth" HeaderText="Fall Month" SortExpression="FallMonth" />
+                </Columns>
+            </asp:GridView>
+
+        </div>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString2 %>" SelectCommand="SELECT FallDetails.ParticipantID, FallDetails.CallDate, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth, FallDiary.ContactParticipant, FallDiary.FallenPastMonth, FallDiary.HowManyFallsLastMonth FROM FallDiary INNER JOIN FallDetails ON FallDiary.ParticipantID = FallDetails.ParticipantID AND FallDiary.InterviewDate = FallDetails.CallDate"></asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
         <br />
         <br />
     <asp:Button ID="menuBtn" runat="server" OnClick="menuBtn_Click" Text="Main Menu" />
-        <asp:SqlDataSource ID="detailsddb" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString %>" SelectCommand="SELECT Participant.ParticipantID, Participant.FirstName, Participant.MiddleInitial, Participant.LastName, Participant.Suffix, Participant.PhoneNumber, Participant.Email, Participant.EmergencyContactFullName, Participant.EmergencyContactPhoneNumber, Participant.StartDate, FallDetails.CallDate, FallCalls.Falls, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth FROM Participant INNER JOIN FallCalls ON Participant.ParticipantID = FallCalls.ParticipantID INNER JOIN FallDetails ON FallCalls.ParticipantID = FallDetails.ParticipantID AND FallCalls.CallDate = FallDetails.CallDate"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="detailsddb" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString %>" SelectCommand="SELECT FallDetails.* FROM FallDetails"></asp:SqlDataSource>
     </form>
     </body>
 </html>

@@ -27,7 +27,7 @@ public partial class Results : System.Web.UI.Page
         SqlDataAdapter da;
         string connectionString;
         connectionString = getConnectionString();
-        da = new SqlDataAdapter("SELECT FallDetails.ParticipantID, FallDetails.CallDate, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth, FallDiary.ContactParticipant, FallDiary.FallenPastMonth, FallDiary.HowManyFallsLastMonth FROM FallDiary INNER JOIN FallDetails ON FallDiary.ParticipantID = FallDetails.ParticipantID AND FallDiary.InterviewDate = FallDetails.CallDate WHERE FallDiary.ParticipantID = " + participantTxt.Text, connectionString);
+        da = new SqlDataAdapter("SELECT FallDetails.* FROM FallDetails WHERE FallDetails.ParticipantID = " + participantTxt.Text, connectionString);
         ds = new DataSet();
         da.Fill(ds);
         participantDL.DataSource = ds;
