@@ -1,7 +1,10 @@
 ﻿body {
     margin: 0;
     padding: 0;
-    background-color: rgb(237, 231, 246);
+    background: url("Background/fall3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    //background-color: rgb(237, 231, 246);
     color: rgb(20, 20, 20);
     font-family: Helvetica, sans-serif;
 }
@@ -29,7 +32,7 @@ h3 {
     padding: 40px 35px;
     box-shadow: 0px 1px 8px -1.5px #4f4f4f;
     background-color: white;
-    border-top: 8px solid rgb(179, 136, 255);
+    border-top: 8px solid black;
 }
 
 .txtMargin {
@@ -38,7 +41,7 @@ h3 {
 
 #footerDetails {
     color: white;
-    background-color: rgb(103, 58, 183);
+    background-color: black;
     margin-left: -35px;
     padding: 7px;
     width: 97%;
