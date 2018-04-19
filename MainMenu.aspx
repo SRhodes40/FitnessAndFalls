@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Fitness And Falls</title>
-    <link rel="stylesheet" href="mainMenu.css" />
+    <link rel="stylesheet" href="MainMenu.css" />
 </head>
     <body>
         <form id="form1" runat="server">
