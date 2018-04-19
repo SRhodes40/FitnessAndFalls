@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Fitness And Falls</title>
+    <link rel="stylesheet" href="Default.css" />
 </head>
 <body>
     <h2>Fitness and Falls</h2>
