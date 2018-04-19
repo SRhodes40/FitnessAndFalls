@@ -4,12 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Main Menu</title>
+     <link rel="stylesheet" href="mainmenu.css" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            Main Menu</div>
+        <h1>Main Menu</h1>
+        
         <asp:Button ID="partBtn" runat="server" Text="New Participant" OnClick="partBtn_Click" />
         <br />
         <br />

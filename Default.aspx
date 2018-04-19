@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Default.css" />
 </head>
 <body>
-    <h2>Fitness and Falls</h2>
+    <h1 style="background-image: none; font-size: xx-large;">&nbsp;Fitness and Falls</h1>
     <ul>
         <li><a href="MainMenu.aspx">Main Menu</a></li>
         <li><a href="Login.aspx">Login Page</a></li>
