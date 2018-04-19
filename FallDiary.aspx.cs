@@ -19,20 +19,27 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Hides questions based on whether or not interview made contact with participant
-        if (this.rblContact.SelectedValue == "1")
+        if (Session["username"] != null)
         {
-            panContact.Visible = true;
-            this.SetFocus(btnSubmitFallDiary);
-        }
-        else if (this.rblContact.SelectedValue == "0")
-        {
-            panContact.Visible = false;
-            this.SetFocus(btnSubmitFallDiary);
+            //Hides questions based on whether or not interview made contact with participant
+            if (this.rblContact.SelectedValue == "1")
+            {
+                panContact.Visible = true;
+                this.SetFocus(btnSubmitFallDiary);
+            }
+            else if (this.rblContact.SelectedValue == "0")
+            {
+                panContact.Visible = false;
+                this.SetFocus(btnSubmitFallDiary);
+            }
+            else
+            {
+                panContact.Visible = false;
+            }
         }
         else
         {
-            panContact.Visible = false;
+            Response.Redirect("Default.aspx");
         }
     }
     protected void btnSubmit_Click(object sender, EventArgs e)

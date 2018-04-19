@@ -9,7 +9,10 @@ public partial class MainMenu : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["username"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 
     protected void partBtn_Click(object sender, EventArgs e)
