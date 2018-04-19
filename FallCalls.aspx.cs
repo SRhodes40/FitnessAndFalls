@@ -19,7 +19,10 @@ public partial class FallCalls : System.Web.UI.Page
     int numRowsAffected;
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        if(Session["username"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 
     protected void btnSumbitFallCalls_Click(object sender, EventArgs e)

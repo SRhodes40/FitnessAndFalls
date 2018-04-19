@@ -20,19 +20,26 @@ public partial class FallDetails : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        txtInterviewDate.Text = Convert.ToString(Session["CallDate"]);
-        txtParticipantID.Text = Convert.ToString(Session["PartID"]);
-        txtInterviewerLastName.Text = Convert.ToString(Session["InterLast"]);
-        txtInterviewerFirstName.Text = Convert.ToString(Session["InterFirst"]);
-        numfalls = Convert.ToInt32(Session["NumFalls"]);
-        if(numfalls > 0)
+        if (Session["username"] != null)
         {
-            numfalls--;
-            Session["NumFalls"] = numfalls;
+            txtInterviewDate.Text = Convert.ToString(Session["CallDate"]);
+            txtParticipantID.Text = Convert.ToString(Session["PartID"]);
+            txtInterviewerLastName.Text = Convert.ToString(Session["InterLast"]);
+            txtInterviewerFirstName.Text = Convert.ToString(Session["InterFirst"]);
+            numfalls = Convert.ToInt32(Session["NumFalls"]);
+            if (numfalls > 0)
+            {
+                numfalls--;
+                Session["NumFalls"] = numfalls;
+            }
+            else
+            {
+                Response.Redirect("MainMenu.aspx");
+            }
         }
         else
         {
-            Response.Redirect("MainMenu.aspx");
+            Response.Redirect("Default.aspx");
         }
     }
 

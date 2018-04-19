@@ -42,6 +42,7 @@ public partial class Login : System.Web.UI.Page
         if (loginSuccessful)
         {
             Console.WriteLine("Success!");
+            Session["username"] = username;
             Response.Redirect("~/MainMenu.aspx");
         }
         else

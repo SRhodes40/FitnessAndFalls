@@ -19,7 +19,10 @@ public partial class Participant : System.Web.UI.Page
     int numRowsAffected;
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["username"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 
     protected void btnSubmitParticipant_Click(object sender, EventArgs e)
