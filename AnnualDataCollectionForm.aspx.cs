@@ -19,15 +19,22 @@ public partial class AnnualDataCollectionForm : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //Hides questions based on whether or not interview made contact with participant
-        if (rblBaseline.SelectedValue.Equals("1"))
+        if (Session["username"] != null)
         {
-            panBaseline.Visible = true;
-            this.SetFocus(panBaseline);
+            //Hides questions based on whether or not interview made contact with participant
+            if (rblBaseline.SelectedValue.Equals("1"))
+            {
+                panBaseline.Visible = true;
+                this.SetFocus(panBaseline);
+            }
+            else
+            {
+                panBaseline.Visible = false;
+            }
         }
         else
         {
-            panBaseline.Visible = false;
+            Response.Redirect("Default.aspx");
         }
     }
 

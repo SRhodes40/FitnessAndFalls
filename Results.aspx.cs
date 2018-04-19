@@ -11,15 +11,19 @@ using System.ComponentModel;  // DataObject, DataObjectMethod
 
 public partial class Results : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
     SqlConnection conn;
     SqlCommand cmd;
     SqlDataReader dr;
     string connectionString;
     ListItem listItem;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["username"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+    }
     
     protected void resultsBtn_Click(object sender, EventArgs e)
     {
