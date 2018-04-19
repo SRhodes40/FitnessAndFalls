@@ -4,12 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Results</title>
+     <link rel="stylesheet" href="Results.css" />
 </head>
 <body>
+    <h1>Results</h1>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="resultsLbl" runat="server" Text="Results"></asp:Label>
             <br />
             <asp:Label ID="participantLbl" runat="server" Text="Enter Participant ID:"></asp:Label>
             &nbsp;
