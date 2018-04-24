@@ -27,20 +27,24 @@ public partial class FallDetails : System.Web.UI.Page
             txtInterviewerLastName.Text = Convert.ToString(Session["InterLast"]);
             txtInterviewerFirstName.Text = Convert.ToString(Session["InterFirst"]);
             numfalls = Convert.ToInt32(Session["NumFalls"]);
-            if (numfalls > 0)
-            {
-                numfalls--;
-                Session["NumFalls"] = numfalls;
-            }
-            else
-            {
-                Response.Redirect("MainMenu.aspx");
-            }
+           
         }
         else
         {
             Response.Redirect("Default.aspx");
         }
+        if (numfalls > 0)
+        {
+            numfalls--;
+            Session["NumFalls"] = numfalls;
+        }
+        else
+        {
+            Response.Redirect("MainMenu.aspx");
+            //Response.Write("move to next page");
+
+        }
+
     }
 
 
@@ -54,7 +58,6 @@ public partial class FallDetails : System.Web.UI.Page
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = cmd.CommandText = "INSERT INTO FallDetails (InterviewerFirstName,InterviewerLastName,FallDiary.ParticipantID, CallDate,FallTime,FallMonth, FallDescription, FallLocation, Injured, InjuryDesc, UsingAssistiveDevice, MedicationChange, MedChangeDesc ) VALUES ('"
                + txtInterviewerFirstName.Text + "','" + txtInterviewerLastName.Text + "','" + txtParticipantID.Text + "','" + txtInterviewDate.Text + "','" + rblTimeOfDay.SelectedValue+ "','" + rblMonthOfFall.SelectedValue + "','" + txtDescribeFall.Text +   "','" + txtFallLocation.Text + "','" + rblResultOfFall.SelectedValue + "','" + txtDescribeInjury.Text + "','" + rblAssistiveDevice.SelectedValue + "','" + rblChangePrescription.SelectedValue + "','" + txtPrescriptionChanged.Text +  "')";
-            Response.Write(cmd.CommandText);
 
             try
 
@@ -75,9 +78,22 @@ public partial class FallDetails : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text =ex.Message; //"Participant ID does not exist or Date is incorrect."; 
+                lblStatus.Text = "Entry was not added."; //"Participant ID does not exist or Date is incorrect."; 
                //"Duplicate Entry was not added.";
             }
+          
+            rblTimeOfDay.ClearSelection();
+            rblMonthOfFall.ClearSelection();
+            txtDescribeFall.Text = "";
+            txtFallLocation.Text = "";
+            rblResultOfFall.ClearSelection();
+            txtDescribeInjury.Text = "";
+            rblAssistiveDevice.ClearSelection();
+            rblChangePrescription.ClearSelection();
+            txtPrescriptionChanged.Text = "";
+           
+
+
             conn.Close();
 
         } // end of Insert
