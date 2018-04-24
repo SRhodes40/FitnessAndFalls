@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="MainMenu.aspx.cs" Inherits="MainMenu" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Fitness And Falls</title>
@@ -10,7 +9,7 @@
     <body>
         <form id="form1" runat="server">
             <div id="logout">
-                <asp:Button class="button" ID="btnLogout" runat="server" Text="Logout" />
+                <asp:Button class="button" ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" />
             </div>
             <div class="container">
                 <div id="header">
