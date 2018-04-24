@@ -9,7 +9,8 @@ using System.Data.SqlClient;  // SqlConnection, SqlCommand, SqlDataReader
 using System.Configuration;   // to get the connection from Web.config
 using System.ComponentModel;  // DataObject, DataObjectMethod
 using System.IO;
-    
+using System.Drawing;
+
 
 
 public partial class Results : System.Web.UI.Page
@@ -26,8 +27,41 @@ public partial class Results : System.Web.UI.Page
         {
             Response.Redirect("Default.aspx");
         }
+
+        if (!IsPostBack)
+        {
+            this.BindGrid();
+        }
     }
-    
+    private void BindGrid()
+    {
+        string strConnString = ConfigurationManager.ConnectionStrings["FitnessAndFallsConnectionString"].ConnectionString;
+        using (SqlConnection con = new SqlConnection(strConnString))
+        {
+            using (SqlCommand cmd = new SqlCommand("SELECT Participant.Suffix, Participant.FirstName, Participant.MiddleInitial, Participant.LastName, FallDetails.CallDate, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth, FallDetails.ParticipantID FROM FallDetails INNER JOIN Participant ON FallDetails.ParticipantID = Participant.ParticipantID"))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter())
+                {
+                    cmd.Connection = con;
+                    sda.SelectCommand = cmd;
+                    using (DataTable dt = new DataTable())
+                    {
+                        fallddgv.DataSourceID = null;
+                        sda.Fill(dt);
+                        fallddgv.DataSource = dt;
+                        fallddgv.DataBind();
+                    }
+                }
+            }
+        }
+    }
+
+    protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        fallddgv.PageIndex = e.NewPageIndex;
+        this.BindGrid();
+    }
+
     protected void resultsBtn_Click(object sender, EventArgs e)
     {
         DataSet ds;
@@ -67,32 +101,54 @@ public partial class Results : System.Web.UI.Page
 
     protected void excelBtn_Click(object sender, EventArgs e)
     {
-        Response.ClearContent();
-        Response.AppendHeader("content-disposition", "attachment;filename=EmployeeDetails.xls");
-        Response.ContentType = "application/excel";
-
-
-        StringWriter stringwriter = new StringWriter();
-        HtmlTextWriter htmtextwriter = new HtmlTextWriter(stringwriter);
-
-        fallddgv.HeaderRow.Style.Add("background-color", "#ffffff");
-
-        foreach (TableCell tableCell in fallddgv.HeaderRow.Cells)
+        Response.Clear();
+        Response.Buffer = true;
+        Response.AddHeader("content-disposition", "attachment;filename=GridViewExport.xls");
+        Response.Charset = "";
+        Response.ContentType = "application/vnd.ms-excel";
+        using (StringWriter sw = new StringWriter())
         {
-            tableCell.Style["background-color"] = "#ffffff";
-        }
+            HtmlTextWriter hw = new HtmlTextWriter(sw);
 
-        foreach (GridViewRow gridviewrow in fallddgv.Rows)
-        {
-            gridviewrow.BackColor = System.Drawing.Color.White;
-            foreach (TableCell gridviewrowtablecell in gridviewrow.Cells)
+            //To Export all pages
+            fallddgv.AllowPaging = false;
+            this.BindGrid();
+
+            fallddgv.HeaderRow.BackColor = Color.White;
+            foreach (TableCell cell in fallddgv.HeaderRow.Cells)
             {
-                gridviewrowtablecell.Style["background-color"] = "#ffffff";
+                cell.BackColor = fallddgv.HeaderStyle.BackColor;
             }
-        }
+            foreach (GridViewRow row in fallddgv.Rows)
+            {
+                row.BackColor = Color.White;
+                foreach (TableCell cell in row.Cells)
+                {
+                    if (row.RowIndex % 2 == 0)
+                    {
+                        cell.BackColor = fallddgv.AlternatingRowStyle.BackColor;
+                    }
+                    else
+                    {
+                        cell.BackColor = fallddgv.RowStyle.BackColor;
+                    }
+                    cell.CssClass = "textmode";
+                }
+            }
 
-        fallddgv.RenderControl(htmtextwriter);
-        Response.Write(stringwriter.ToString());
-        Response.End();
+            fallddgv.RenderControl(hw);
+
+            //style to format numbers to string
+            string style = @"<style> .textmode { } </style>";
+            Response.Write(style);
+            Response.Output.Write(sw.ToString());
+            Response.Flush();
+            Response.End();
+        }
+    }
+
+    public override void VerifyRenderingInServerForm(Control control)
+    {
+        /* Verifies that the control is rendered */
     }
 }

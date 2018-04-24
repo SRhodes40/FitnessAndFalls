@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Results.aspx.cs" Inherits="Results" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Results.aspx.cs" Inherits="Results" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -71,7 +71,7 @@
             <asp:Button ID="excelBtn" runat="server" Text="Export to Excel" OnClick="excelBtn_Click" />
             <asp:GridView ID="fallddgv" runat="server" AutoGenerateColumns="False" DataSourceID="detailsddb" AllowPaging="True" AllowSorting="True">
                 <Columns>
-                    <asp:BoundField DataField="Suffix" HeaderText="Suffix" SortExpression="Suffix" />                   
+                    <asp:BoundField DataField="Suffix" HeaderText="Suffix" SortExpression="Suffix" />                
                     <asp:BoundField DataField="FirstName" HeaderText="First Name" SortExpression="FirstName" />
                     <asp:BoundField DataField="MiddleInitial" HeaderText="Middle Initial" SortExpression="MiddleInitial" />
                     <asp:BoundField DataField="LastName" HeaderText="Last Name" SortExpression="LastName" />
@@ -97,7 +97,7 @@
         <br />
         <br />
     <asp:Button ID="menuBtn" runat="server" OnClick="menuBtn_Click" Text="Main Menu" />
-        <asp:SqlDataSource ID="detailsddb" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString %>" SelectCommand="SELECT Participant.Suffix, Participant.FirstName, Participant.MiddleInitial, Participant.LastName, FallDetails.ParticipantID, FallDetails.CallDate, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth FROM FallDetails INNER JOIN Participant ON FallDetails.ParticipantID = Participant.ParticipantID"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="detailsddb" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString %>" SelectCommand="SELECT Participant.Suffix, Participant.FirstName, Participant.MiddleInitial, Participant.LastName, FallDetails.CallDate, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth, FallDetails.ParticipantID FROM FallDetails INNER JOIN Participant ON FallDetails.ParticipantID = Participant.ParticipantID"></asp:SqlDataSource>
     </form>
     </body>
 </html>
