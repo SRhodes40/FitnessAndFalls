@@ -34,4 +34,10 @@ public partial class MainMenu : System.Web.UI.Page
     {
         Response.Redirect("~/Results.aspx");
     }
+
+    protected void btnLogout_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Response.Redirect("Default.aspx");
+    }
 }
