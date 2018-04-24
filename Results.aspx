@@ -23,6 +23,7 @@
             <asp:Label ID="fallddResultsLbl" runat="server" Text="Fall Details and Fall Diary Results:"></asp:Label>
             <br />
 &nbsp;<asp:DataList ID="participantDL" runat="server" Visible="False" DataKeyField="ParticipantID" OnSelectedIndexChanged="participantDL_SelectedIndexChanged" GridLines="Both"   >
+                <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
             <ItemTemplate>
                 Participant ID:
                 <asp:Label ID="ParticipantIDLabel" runat="server" Text='<%# Eval("ParticipantID") %>' />
@@ -67,6 +68,7 @@
                 <br />
             </ItemTemplate>
         </asp:DataList>
+            <asp:Button ID="excelBtn" runat="server" Text="Export to Excel" OnClick="excelBtn_Click" />
             <asp:GridView ID="fallddgv" runat="server" AutoGenerateColumns="False" DataSourceID="detailsddb" AllowPaging="True" AllowSorting="True">
                 <Columns>
                     <asp:BoundField DataField="Suffix" HeaderText="Suffix" SortExpression="Suffix" />                   

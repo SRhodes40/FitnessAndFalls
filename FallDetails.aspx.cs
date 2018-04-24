@@ -33,10 +33,12 @@ public partial class FallDetails : System.Web.UI.Page
         {
             Response.Redirect("Default.aspx");
         }
-        if (numfalls > 0)
+        if (numfalls > -1)
         {
             numfalls--;
             Session["NumFalls"] = numfalls;
+            Response.AddHeader("REFRESH", "1;URL=test.aspx");
+
         }
         else
         {
@@ -45,11 +47,15 @@ public partial class FallDetails : System.Web.UI.Page
 
         }
 
+
     }
 
 
     protected void btnSubmitFallDetails_Click(object sender, EventArgs e)
     {
+
+        
+        
         {
             conn = new SqlConnection(getConnectionString());
             conn.Open();
@@ -82,7 +88,8 @@ public partial class FallDetails : System.Web.UI.Page
                 lblStatus.Text = "Duplicate Entry was not added."; //"Participant ID does not exist or Date is incorrect."; 
                //"Duplicate Entry was not added.";
             }
-          
+           
+
             rblTimeOfDay.ClearSelection();
             rblMonthOfFall.ClearSelection();
             txtDescribeFall.Text = "";
@@ -92,7 +99,8 @@ public partial class FallDetails : System.Web.UI.Page
             rblAssistiveDevice.ClearSelection();
             rblChangePrescription.ClearSelection();
             txtPrescriptionChanged.Text = "";
-           
+
+
 
 
             conn.Close();
