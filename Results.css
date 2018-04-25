@@ -6,7 +6,12 @@
     font-family: Helvetica, sans-serif;
 }
 
-#header {
+.container{
+    width: 95%;
+    margin: auto;
+}
+
+#headerText {
     width: 70%;
     padding-bottom: 7px;
     margin: 7px auto;
@@ -19,24 +24,49 @@ hr {
     margin-bottom: 30px;
 }
 
-#searchContainer {
+.headerButtons{
+    /*border: 1px solid darkgreen;*/
+    height: 50px;
+}
 
+#searchContainer {
+    padding: 8px;
+    background-color: white;
+    width: 220px;
+    border: 1px solid black;
+    border-radius: 8px;
+    float: left;
 }
 
 .searchBox {
-    border-radius: 8px;
-    padding: 2px;
+    box-shadow: none;
+    border: none;
+    margin: 2px;
+    width: 130px;
 }
 
 .searchButton {
     background-color: white;
-    background-image: url("images/searchIcon.png");
-    background-repeat: no-repeat;
-    background-position: 10px 10px;
-    color: white;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+    box-shadow: none;
+    border: none;
+}
+
+.menuButton {
+    position: absolute;
+    right: 40px;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: none;
+    border: 1px solid black;
+    border-radius: 8px;
 }

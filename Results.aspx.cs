@@ -23,6 +23,7 @@ public partial class Results : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        fallddResultsLbl.Visible = false;
         if (Session["username"] == null)
         {
             Response.Redirect("Default.aspx");
@@ -78,10 +79,12 @@ public partial class Results : System.Web.UI.Page
         if (participantTxt.Text == "")
         {
             participantDL.Visible = false;
+            fallddResultsLbl.Visible = false;
         }
         else if (participantTxt.Text == participantTxt.Text)
         {
             participantDL.Visible = true;
+            fallddResultsLbl.Visible = true;
         }
     }
     private static string getConnectionString()
