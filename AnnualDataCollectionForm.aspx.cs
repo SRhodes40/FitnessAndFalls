@@ -22,16 +22,21 @@ public partial class AnnualDataCollectionForm : System.Web.UI.Page
     {
         
         if (rblBaseline.SelectedValue.Equals("Yes"))
-            {
-                panBaseline.Visible = true;
-                panBaseline.Focus();
-            }
-            else
-            {
-                panBaseline.Visible = false;
-                panBaseline.Focus();
+        {
+            panBaseline.Visible = true;
+            panBaseline.Focus();
         }
-        
+        else if (rblBaseline.SelectedValue.Equals("No"))
+        {
+            panBaseline.Visible = false;
+            rblHealthProblems.Focus();
+        }
+        else
+        {
+            panBaseline.Visible = false;
+            panBaseline.Focus();
+        }
+
     } // end of Yes/No changed
 
     
