@@ -22,12 +22,12 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
         if (Session["username"] != null)
         {
             //Hides questions based on whether or not interview made contact with participant
-            if (this.rblContact.SelectedValue == "1")
+            if (this.rblContact.SelectedValue == "Yes")
             {
                 panContact.Visible = true;
                 this.SetFocus(btnSubmitFallDiary);
             }
-            else if (this.rblContact.SelectedValue == "0")
+            else if (this.rblContact.SelectedValue == "No")
             {
                 panContact.Visible = false;
                 this.SetFocus(btnSubmitFallDiary);
