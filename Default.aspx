@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Fitness and Falls Login</title>
   <link rel="stylesheet" href="Default.css" />
+  <link rel="shortcut icon" href="images/faviconFinal.png" type="image/x-icon" />
 </head>
 <body>
     <form id="form1" runat="server">

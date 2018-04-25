@@ -7,6 +7,7 @@
 <head runat="server">
     <title>Add New Participant</title>
     <link rel="stylesheet" href="newParticipant.css" />
+    <link rel="shortcut icon" href="images/faviconFinal.png" type="image/x-icon" />
 </head>
 <body>
     <form id="form1" runat="server">

@@ -5,11 +5,12 @@
 <head runat="server">
     <title>Fitness And Falls</title>
     <link rel="stylesheet" href="mainMenu.css" />
+    <link rel="shortcut icon" href="images/faviconFinal.png" type="image/x-icon" />
 </head>
 <body>
 <form id="form1" runat="server">
     <div id="logout">
-        <asp:Button class="button" ID="btnLogout" runat="server" Text="Logout" />
+        <asp:Button class="button" ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click1" />
     </div>
     <div class="container">
         <div id="header">

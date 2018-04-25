@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Fall Diary</title>
     <link rel="stylesheet" href="fallDiary.css" />
+    <link rel="shortcut icon" href="images/faviconFinal.png" type="image/x-icon" />
 </head>
 <body>
     <form id="form1" runat="server">

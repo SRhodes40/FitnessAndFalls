@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Results</title>
     <link rel="stylesheet" href="Results.css" />
+    <link rel="shortcut icon" href="images/faviconFinal.png" type="image/x-icon" />
 </head>
 <body>
     <p id="headerText">Results</p><hr />
@@ -70,7 +71,6 @@
                         <br />
                     </ItemTemplate>
                 </asp:DataList>
-                <asp:Button ID="excelBtn" class="exportButton" runat="server" Text="Export to Excel" OnClick="excelBtn_Click" />
             </div>
             <asp:GridView ID="fallddgv" runat="server" AutoGenerateColumns="False" DataSourceID="detailsddb" AllowPaging="True" AllowSorting="True">
                 <Columns>
@@ -93,6 +93,7 @@
                     <asp:BoundField DataField="FallMonth" HeaderText="Fall Month" SortExpression="FallMonth" />
                 </Columns>
             </asp:GridView>
+            <asp:Button ID="excelBtn" class="exportButton" runat="server" Text="Export to Excel" OnClick="excelBtn_Click" />
 
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:FitnessAndFallsConnectionString2 %>" SelectCommand="SELECT FallDetails.ParticipantID, FallDetails.CallDate, FallDetails.InterviewerFirstName, FallDetails.InterviewerLastName, FallDetails.FallTime, FallDetails.FallDescription, FallDetails.FallLocation, FallDetails.Injured, FallDetails.InjuryDesc, FallDetails.UsingAssistiveDevice, FallDetails.MedicationChange, FallDetails.MedChangeDesc, FallDetails.FallMonth, FallDiary.ContactParticipant, FallDiary.FallenPastMonth, FallDiary.HowManyFallsLastMonth FROM FallDiary INNER JOIN FallDetails ON FallDiary.ParticipantID = FallDetails.ParticipantID AND FallDiary.InterviewDate = FallDetails.CallDate"></asp:SqlDataSource>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>

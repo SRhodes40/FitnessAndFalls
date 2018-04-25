@@ -6,6 +6,7 @@
 <head runat="server">
     <title>Annual Data Collection</title>
     <link rel="stylesheet" href="annualData.css" />
+    <link rel="shortcut icon" href="images/faviconFinal.png" type="image/x-icon" />
     
 </head>
 <body>

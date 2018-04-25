@@ -24,7 +24,7 @@ public partial class Results : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         fallddResultsLbl.Visible = false;
-        excelBtn.Visible = false;
+        excelBtn.Visible = true;
 
         if (Session["username"] == null)
         {
@@ -82,14 +82,12 @@ public partial class Results : System.Web.UI.Page
         {
             participantDL.Visible = false;
             fallddResultsLbl.Visible = false;
-            excelBtn.Visible = false;
             Response.Redirect("~/Results.aspx");
         }
         else if (participantTxt.Text == participantTxt.Text)
         {
             participantDL.Visible = true;
             fallddResultsLbl.Visible = true;
-            excelBtn.Visible = true;
         }
 
         DataSet ds;

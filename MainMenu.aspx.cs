@@ -35,9 +35,9 @@ public partial class MainMenu : System.Web.UI.Page
         Response.Redirect("~/Results.aspx");
     }
 
-    protected void btnLogout_Click(object sender, EventArgs e)
+    protected void btnLogout_Click1(object sender, EventArgs e)
     {
         Session.Abandon();
-        Response.Redirect("Default.aspx");
+        Response.Redirect("~/Default.aspx");
     }
 }
