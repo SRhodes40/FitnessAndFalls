@@ -1,9 +1,42 @@
 ﻿body {
-    background: url("Background/fall3.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(212, 212, 212);
+    color: rgb(20, 20, 20);
+    font-family: Helvetica, sans-serif;
 }
 
-h1 {
+#header {
+    width: 70%;
+    padding-bottom: 7px;
+    margin: 7px auto;
+    font-size: 2em;
     text-align: center;
+}
+
+hr {
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+#searchContainer {
+
+}
+
+.searchBox {
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.searchButton {
+    background-color: white;
+    background-image: url("images/searchIcon.png");
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
 }

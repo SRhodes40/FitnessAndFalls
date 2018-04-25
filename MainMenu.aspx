@@ -13,7 +13,7 @@
     </div>
     <div class="container">
         <div id="header">
-            Fitness and Falls<br />&nbsp;&nbsp;Main Menu
+            Fitness and Falls<br />Main Menu
         </div>
         <div id="navBar">
             <ul>
