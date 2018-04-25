@@ -38,8 +38,8 @@
                 <p class="txtQuestions">Were you able to make contact with the participant this month? <span style="color: rgb(219, 79, 73)">*</span></p>
                 <p style="font-size: .8em;">&nbsp;If no, submit the form without answering any more questions.</p><br />
                 <asp:RadioButtonList class="txtMargin" ID="rblContact" runat="server" AutoPostBack = "true">
-                    <asp:ListItem Text="No" Value="0" />
-                    <asp:ListItem Text="Yes" Value="1" />
+                    <asp:ListItem Text="No" Value="No" />
+                    <asp:ListItem Text="Yes" Value="Yes" />
                 </asp:RadioButtonList>
                 <%--                <asp:RadioButton ID="rbYesParticipation" runat="server" />
                 <asp:Label ID="lblYesParticipation" runat="server" Text="Yes"></asp:Label><br />
@@ -49,8 +49,8 @@
                 <asp:Panel ID="panContact" runat="server"> 
                     <p class="txtQuestions">Have you fallen in the past month?</p><br />
                     <asp:RadioButtonList class="txtMargin" ID="rblFallen" runat="server">
-                        <asp:ListItem Text="No" Value="0" />
-                        <asp:ListItem Text="Yes" Value="1" />
+                        <asp:ListItem Text="No" Value="No" />
+                        <asp:ListItem Text="Yes" Value="Yes" />
                     </asp:RadioButtonList>
                     <%--                <asp:RadioButton ID="rbYesHaveFallen" runat="server" />
                     <asp:Label ID="lblYesHaveFallen" runat="server" Text="Yes"></asp:Label><br />
