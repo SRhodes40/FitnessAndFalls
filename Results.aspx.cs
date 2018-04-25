@@ -24,6 +24,8 @@ public partial class Results : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         fallddResultsLbl.Visible = false;
+        excelBtn.Visible = false;
+
         if (Session["username"] == null)
         {
             Response.Redirect("Default.aspx");
@@ -57,6 +59,17 @@ public partial class Results : System.Web.UI.Page
         }
     }
 
+    //   POTENTIAL SOLUTION FOR EMPTY DATALIST ENTRIES
+
+    //protected void participantDL_ItemDataBound1(object sender, DataListItemEventArgs e)
+    //{
+    //    if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+    //    {
+    //        if ((String.IsNullOrEmpty(((Label)e.Item.FindControl("Label1")).Text)))
+    //            e.Item.Visible = false;
+    //    }
+    //}
+
     protected void OnPageIndexChanging(object sender, GridViewPageEventArgs e)
     {
         fallddgv.PageIndex = e.NewPageIndex;
@@ -65,6 +78,20 @@ public partial class Results : System.Web.UI.Page
 
     protected void resultsBtn_Click(object sender, EventArgs e)
     {
+        if (participantTxt.Text == "")
+        {
+            participantDL.Visible = false;
+            fallddResultsLbl.Visible = false;
+            excelBtn.Visible = false;
+            Response.Redirect("~/Results.aspx");
+        }
+        else if (participantTxt.Text == participantTxt.Text)
+        {
+            participantDL.Visible = true;
+            fallddResultsLbl.Visible = true;
+            excelBtn.Visible = true;
+        }
+
         DataSet ds;
         SqlDataAdapter da;
         string connectionString;
@@ -74,18 +101,6 @@ public partial class Results : System.Web.UI.Page
         da.Fill(ds);
         participantDL.DataSource = ds;
         participantDL.DataBind();
-
-
-        if (participantTxt.Text == "")
-        {
-            participantDL.Visible = false;
-            fallddResultsLbl.Visible = false;
-        }
-        else if (participantTxt.Text == participantTxt.Text)
-        {
-            participantDL.Visible = true;
-            fallddResultsLbl.Visible = true;
-        }
     }
     private static string getConnectionString()
     {

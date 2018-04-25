@@ -95,4 +95,9 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
         Session.Abandon();
         Response.Redirect("~/Default.aspx");
     }
+
+    protected void btnMainMenu_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/MainMenu.aspx");
+    }
 }

@@ -11,17 +11,19 @@
     <p id="headerText">Results</p><hr />
     <div class="container">
         <form id="form1" runat="server">
-                <div class="headerButtons">
-                    <%--<asp:Label ID="participantLbl" runat="server" Text="Enter Participant ID:"></asp:Label>&nbsp;--%>
-                    <div id="searchContainer">
-                        <asp:TextBox ID="participantTxt" class="searchBox" placeholder="Enter Participant ID..." runat="server"></asp:TextBox>
-                        <asp:Button ID="resultsBtn" class="searchButton" runat="server" Text="Search" OnClick="resultsBtn_Click" />
-                    </div>
-                    <asp:Button ID="menuBtn" class="menuButton" runat="server" OnClick="menuBtn_Click" Text="Main Menu" />
+            <div class="headerButtons">
+                <%--<asp:Label ID="participantLbl" runat="server" Text="Enter Participant ID:"></asp:Label>&nbsp;--%>
+                <div id="searchContainer">
+                    <asp:TextBox ID="participantTxt" class="searchBox" placeholder="Enter Participant ID..." runat="server"></asp:TextBox>
+                    <asp:Button ID="resultsBtn" class="searchButton" runat="server" Text="Search" OnClick="resultsBtn_Click" />
                 </div>
-
-                <asp:Label ID="fallddResultsLbl" runat="server" Text="Fall Details and Fall Diary Results:"></asp:Label>
-                <asp:DataList ID="participantDL" runat="server" Visible="False" DataKeyField="ParticipantID" OnSelectedIndexChanged="participantDL_SelectedIndexChanged" GridLines="Both"   >
+                <asp:Button ID="menuBtn" class="menuButton" runat="server" OnClick="menuBtn_Click" Text="Main Menu" />
+            </div>
+            <div class="searchResultsContainer">
+                <div class="resultsHeader" >
+                    <asp:Label ID="fallddResultsLbl" runat="server" Text="Fall Details and Fall Diary Results:"></asp:Label>
+                </div>
+                <asp:DataList ID="participantDL" runat="server" Visible="False" DataKeyField="ParticipantID" OnSelectedIndexChanged="participantDL_SelectedIndexChanged" GridLines="Both" RepeatColumns="5"   >
 
                 <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
                     <ItemTemplate>
@@ -68,7 +70,8 @@
                         <br />
                     </ItemTemplate>
                 </asp:DataList>
-                <asp:Button ID="excelBtn" runat="server" Text="Export to Excel" OnClick="excelBtn_Click" />
+                <asp:Button ID="excelBtn" class="exportButton" runat="server" Text="Export to Excel" OnClick="excelBtn_Click" />
+            </div>
             <asp:GridView ID="fallddgv" runat="server" AutoGenerateColumns="False" DataSourceID="detailsddb" AllowPaging="True" AllowSorting="True">
                 <Columns>
                     <asp:BoundField DataField="Suffix" HeaderText="Suffix" SortExpression="Suffix" />                
