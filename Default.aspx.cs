@@ -43,6 +43,7 @@ public partial class Login : System.Web.UI.Page
         {
             Console.WriteLine("Success!");
             Session["username"] = username;
+            Session["userType"] = username.Substring(0, 5);
             Response.Redirect("~/MainMenu.aspx");
         }
         else
