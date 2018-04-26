@@ -31,6 +31,11 @@ public partial class Results : System.Web.UI.Page
             Response.Redirect("Default.aspx");
         }
 
+        if(!Session["userType"].Equals("admin"))
+        {
+            Response.Redirect("MainMenu.aspx");
+        }
+
         if (!IsPostBack)
         {
             this.BindGrid();
