@@ -21,7 +21,7 @@
                 <li><a href="Participant.aspx">New Participant</a></li>
                 <li><a href="FallDiary.aspx">Fall Diary</a></li>
                 <li><a href="AnnualDataCollectionForm.aspx">Annual Data Collection</a></li>
-                <li><a href="Results.aspx">Results</a></li>
+                <li id="resultsButton" runat="server"><a href="Results.aspx">Results</a></li>
             </ul>
         </div>
     </div>
