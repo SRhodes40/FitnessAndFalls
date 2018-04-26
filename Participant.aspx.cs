@@ -35,7 +35,7 @@ public partial class Participant : System.Web.UI.Page
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "INSERT INTO Participant (LastName, FirstName,MiddleInitial,Suffix,PhoneNumber, Email, EmergencyContactFullName, EmergencyContactPhoneNumber, StartDate  ) VALUES ('"
                  + txtParticipantLastName.Text + "','" + txtParticipantFirstName.Text + "','" + txtParticipantMiddle.Text + "','" + txtParticipantSuffix.Text + "','" + txtParticipantPhoneNumber.Text + "','" + txtParticipantEmail.Text + "','" + txtParticipantEmergencyContactFullName.Text + "','" + txtParticipantEmergencyContactPhoneNumber.Text + "','" + txtParticipantStartDate.Text + "')";
-            Response.Write(cmd.CommandText);
+           // Response.Write(cmd.CommandText);
 
             try
 
@@ -56,7 +56,7 @@ public partial class Participant : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text = ex.Message;//"Person not found.";
+                lblStatus.Text = "Person not found.";
             }
             conn.Close();
 

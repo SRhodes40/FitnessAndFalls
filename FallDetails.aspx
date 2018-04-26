@@ -66,11 +66,11 @@
 
         
                 <p class="txtQuestions">Please describe the fall in your own words <span style="color: rgb(219, 79, 73)">*</span></p><br />
-                <asp:TextBox class="txtMargin" ID="txtDescribeFall" runat="server" Height="128px" Width="400px"></asp:TextBox><br />
+                <asp:TextBox class="txtMargin" ID="txtDescribeFall" runat="server" Height="128px" Width="400px" TextMode="MultiLine"></asp:TextBox><br />
 
         
                 <p class="txtQuestions">Where were you when you fell? <span style="color: rgb(219, 79, 73)">*</span></p><br />
-                <asp:TextBox class="txtMargin" ID="txtFallLocation" runat="server" Height="128px" Width="400px"></asp:TextBox><br />
+                <asp:TextBox class="txtMargin" ID="txtFallLocation" runat="server" Height="128px" Width="400px" TextMode="MultiLine"></asp:TextBox><br />
 
               
 
@@ -81,7 +81,7 @@
                 </asp:RadioButtonList>
 
                 <p class="txtQuestions">If yes, please describe the injury?</p><br />
-                <asp:TextBox class="txtMargin" ID="txtDescribeInjury" runat="server" Height="128px" Width="400px"></asp:TextBox>
+                <asp:TextBox class="txtMargin" ID="txtDescribeInjury" runat="server" Height="128px" Width="400px" TextMode="MultiLine"></asp:TextBox>
 
                 <p class="txtQuestions">Were you using an assistive device when you fell?</p><br />
                 <asp:RadioButtonList class="txtMargin" ID="rblAssistiveDevice" runat="server">
@@ -96,7 +96,7 @@
                 </asp:RadioButtonList>
 
                 <p class="txtQuestions">If yes, what changes were made? </p><br />
-                <asp:TextBox ID="txtPrescriptionChanged" runat="server" Height="128px" Width="400px"></asp:TextBox><br /><br /><hr /><br />
+                <asp:TextBox ID="txtPrescriptionChanged" runat="server" Height="128px" Width="400px" TextMode="MultiLine"></asp:TextBox><br /><br /><hr /><br />
 
                 <div style="text-align: center;">
 

@@ -52,7 +52,7 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
             cmd.CommandType = CommandType.Text;
            cmd.CommandText = "INSERT INTO FallDiary (InterviewerLastName, InterviewerFirstName,ParticipantID,ContactParticipant,FallenPastMonth, HowManyFallsLastMonth, InterviewDate  ) VALUES ('"
                 + txtInterviewerLastName.Text + "','" + txtInterviewerFirstName.Text + "','" + txtParticipantID.Text + "','" + rblContact.SelectedValue + "','" + rblFallen.SelectedValue +   "','" + txtNumFallsFallDiary.Text +"','" + txtInterviewDate.Text  + "')";
-            Response.Write(cmd.CommandText);
+            //Response.Write(cmd.CommandText);
             
               try
              
@@ -69,7 +69,7 @@ public partial class Fitness_and_Falls_FallDiary : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text = ex.Message;//"Person not found.";
+                lblStatus.Text = "Person not found.";
             }
             conn.Close();
             int tempint = Convert.ToInt32(txtNumFallsFallDiary.Text);
