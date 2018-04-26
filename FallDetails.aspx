@@ -15,7 +15,17 @@
                 <p id="definition">Definition of a fall: An event which results in a person coming 
                     to rest unintentionally on the ground or other lower level, not 
                     as a result of a major intrinsic event (such as a stroke) or 
-                    overwhelming hazard. </p><br />
+                    overwhelming hazard. </p>
+                <b>
+                <asp:Label ID="fillLbl" runat="server" Text="Please Complete this form "></asp:Label>
+                <asp:Label ID="numLbl" runat="server" Text=""></asp:Label>
+                <asp:Label ID="timeLbl" runat="server" Text="  time(s) after this one."></asp:Label>
+                    </b>
+                <br />
+                <br />
+                <asp:Button ID="menuBtn" runat="server" Text="Main Menu" OnClick="menuBtn_Click" />
+                    <br />
+                <br />
 
                 <p class="txtQuestions">Last Name of Interviewer <span style="color: rgb(219, 79, 73)">*</span></p><br />
                 <asp:TextBox class="txtMargin" ID="txtInterviewerLastName" runat="server"></asp:TextBox>
@@ -91,8 +101,7 @@
                 <div style="text-align: center;">
 
                     <asp:Button ID="btnSubmitFallDetails" runat="server" Text="Submit" OnClick="btnSubmitFallDetails_Click" />
-                    &nbsp;<asp:Button ID="menuBtn" runat="server" Text="Main Menu" OnClick="menuBtn_Click" />
-                    <br />
+                    &nbsp;<br />
                 </div>
                 <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
             </div>

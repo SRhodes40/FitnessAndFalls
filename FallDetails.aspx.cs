@@ -33,17 +33,22 @@ public partial class FallDetails : System.Web.UI.Page
         {
             Response.Redirect("Default.aspx");
         }
-        if (numfalls > -1)
+        if (numfalls != 0)
         {
             numfalls--;
             Session["NumFalls"] = numfalls;
-            Response.AddHeader("REFRESH", "1;URL=test.aspx");
+            numLbl.Text = numfalls.ToString();
+            menuBtn.Visible = false;
+
+
 
         }
         else
         {
-            Response.Redirect("MainMenu.aspx");
-            //Response.Write("move to next page");
+            menuBtn.Visible = true;
+            fillLbl.Visible = false;
+            timeLbl.Visible = false;
+            numLbl.Text = "DONE! Please Click Main Menu.";
 
         }
 
@@ -64,7 +69,7 @@ public partial class FallDetails : System.Web.UI.Page
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = cmd.CommandText = "INSERT INTO FallDetails (InterviewerFirstName,InterviewerLastName,FallDiary.ParticipantID, CallDate,FallTime,FallMonth, FallDescription, FallLocation, Injured, InjuryDesc, UsingAssistiveDevice, MedicationChange, MedChangeDesc ) VALUES ('"
                + txtInterviewerFirstName.Text + "','" + txtInterviewerLastName.Text + "','" + txtParticipantID.Text + "','" + txtInterviewDate.Text + "','" + rblTimeOfDay.SelectedValue+ "','" + rblMonthOfFall.SelectedValue + "','" + txtDescribeFall.Text +   "','" + txtFallLocation.Text + "','" + rblResultOfFall.SelectedValue + "','" + txtDescribeInjury.Text + "','" + rblAssistiveDevice.SelectedValue + "','" + rblChangePrescription.SelectedValue + "','" + txtPrescriptionChanged.Text +  "')";
-
+            Response.Write(cmd.CommandText);
             try
 
             {
@@ -84,8 +89,9 @@ public partial class FallDetails : System.Web.UI.Page
             }
             catch (Exception ex)
             {
-                lblStatus.Text = "Entry was not added."; //"Participant ID does not exist or Date is incorrect."; 
-               //"Duplicate Entry was not added.";
+                //lblStatus.Text = "Entry was not added.";
+                lblStatus.Text = ex.Message;//"Participant ID does not exist or Date is incorrect."; 
+                                            //"Duplicate Entry was not added.";
             }
            
 

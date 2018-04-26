@@ -74,7 +74,10 @@ public partial class Results : System.Web.UI.Page
     {
         fallddgv.PageIndex = e.NewPageIndex;
         this.BindGrid();
+        annualdatagGV.PageIndex = e.NewPageIndex;
+        this.BindGrid();
     }
+
 
     protected void resultsBtn_Click(object sender, EventArgs e)
     {
@@ -119,7 +122,7 @@ public partial class Results : System.Web.UI.Page
     {
         Response.Clear();
         Response.Buffer = true;
-        Response.AddHeader("content-disposition", "attachment;filename=GridViewExport.xls");
+        Response.AddHeader("content-disposition", "attachment;filename=FallDetails.xls");
         Response.Charset = "";
         Response.ContentType = "application/vnd.ms-excel";
         using (StringWriter sw = new StringWriter())
@@ -166,5 +169,63 @@ public partial class Results : System.Web.UI.Page
     public override void VerifyRenderingInServerForm(Control control)
     {
         /* Verifies that the control is rendered */
+    }
+
+    protected void annualdatagGV_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void excelDataBtn_Click(object sender, EventArgs e)
+    {
+        Response.Clear();
+        Response.Buffer = true;
+        Response.AddHeader("content-disposition", "attachment;filename=AnnualDataCollection.xls");
+        Response.Charset = "";
+        Response.ContentType = "application/vnd.ms-excel";
+        using (StringWriter sw = new StringWriter())
+        {
+            HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+            //To Export all pages
+            annualdatagGV.AllowPaging = false;
+            this.BindGrid();
+
+            annualdatagGV.HeaderRow.BackColor = Color.White;
+            foreach (TableCell cell in annualdatagGV.HeaderRow.Cells)
+            {
+                cell.BackColor = annualdatagGV.HeaderStyle.BackColor;
+            }
+            foreach (GridViewRow row in annualdatagGV.Rows)
+            {
+                row.BackColor = Color.White;
+                foreach (TableCell cell in row.Cells)
+                {
+                    if (row.RowIndex % 2 == 0)
+                    {
+                        cell.BackColor = annualdatagGV.AlternatingRowStyle.BackColor;
+                    }
+                    else
+                    {
+                        cell.BackColor = annualdatagGV.RowStyle.BackColor;
+                    }
+                    cell.CssClass = "textmode";
+                }
+            }
+
+            annualdatagGV.RenderControl(hw);
+
+            //style to format numbers to string
+            string style = @"<style> .textmode { } </style>";
+            Response.Write(style);
+            Response.Output.Write(sw.ToString());
+            Response.Flush();
+            Response.End();
+        }
+    }
+
+    protected void annualdatagGV_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+
     }
 }
