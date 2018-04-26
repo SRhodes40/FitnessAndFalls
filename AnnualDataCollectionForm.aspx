@@ -16,7 +16,7 @@
             
         <p class="txtTitle">Annual Data Collection</p>
         <p class="txtQuestions">Participant ID<span style="color: rgb(219, 79, 73)">*</span></p><br />
-        <p id="definition">FOR NEW PARTICIPANTS!!!: Enter the 8-digit baseline test date + the 2 digit hour they were tested (00 - 23) + their age (e.g. a test that started january 17th 2018 at 8am for a 78 year old individual would result in the following participant ID: 011720180878). FOR RETURNING PARTICIPANTS: Enter their existing participant ID. Email Dr. Saunders at saundenw@mountunion.edu if the ID is unknown to you or the participant.</p>
+        
         <asp:TextBox ID="txtParticipantID" runat="server" class="txtMargin"></asp:TextBox>
 
 
@@ -269,11 +269,14 @@
              If question A is answered with a 'No' or 'Yes, with difficulty', please then answer question B.</p>
         
         <p class="txtQuestions">1a. Take care of own personal needs-like dressing yourself<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS1" runat="server" class="txtMargin">
+       
+         <asp:RadioButtonList ID="rblCPFS1" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS1_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+
+    <asp:Panel ID="panCPFS1" runat="server" Visible="False">
         <p class="txtQuestions">1b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -308,13 +311,17 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS1Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+    </asp:Panel> 
+           
+     
         <p class="txtQuestions">2a. Bathe yourself, using tub or shower<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS2" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS2" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS2_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+
+    <asp:Panel ID="panCPFS2" runat="server" Visible="False"> 
         <p class="txtQuestions">2b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -349,13 +356,17 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS2Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+     </asp:Panel>
+        
+
         <p class="txtQuestions">3a. Climb up and down a flight or stairs (like to a second story in a house)<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS3" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS3" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS3_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+
+     <asp:Panel ID="panCPFS3" runat="server" Visible="False"> 
         <p class="txtQuestions">3b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -390,14 +401,17 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS3Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+      </asp:Panel>
+
        <p class="txtQuestions">4a. Walk outside one or two blocks <span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS4" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS4" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS4_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
-        <p class="txtQuestions">4b. Why are you unable? OR Why do you have difficulty?</p>
+      
+   <asp:Panel ID="panCPFS4" runat="server" Visible="False"> 
+         <p class="txtQuestions">4b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
                <asp:RadioButtonList ID="rblCPFS4Health" runat="server" class="txtMargin">
@@ -431,13 +445,15 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS4Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+      </asp:Panel>
+
         <p class="txtQuestions">5a. Do light household activities - like cooking, dusting, washing dishes, sweeping a walkway<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS5" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS5" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS5_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+    <asp:Panel ID="panCPFS5" runat="server" Visible="False"> 
         <p class="txtQuestions">5b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -472,13 +488,15 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS5Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+      </asp:Panel>
+
        <p class="txtQuestions">6a. Do own shopping for groceries or clothes<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS6" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS6" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS6_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+      <asp:Panel ID="panCPFS6" runat="server" Visible="False"> 
         <p class="txtQuestions">6b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -513,13 +531,15 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS6Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+      </asp:Panel>
+
         <p class="txtQuestions">7a. Walk 1/2 mile (6-7 blocks) <span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS7" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS7" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS7_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+     <asp:Panel ID="panCPFS7" runat="server" Visible="False"> 
         <p class="txtQuestions">7b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -554,13 +574,15 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS7Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+      </asp:Panel>
+
         <p class="txtQuestions">8a. Walk 1 mile (12-14 blocks) <span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS8" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS8" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS8_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+     <asp:Panel ID="panCPFS8" runat="server" Visible="False">
         <p class="txtQuestions">8b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -595,13 +617,16 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS8Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+      </asp:Panel>
+
         <p class="txtQuestions">9a. Lift and carry 10 pounds (full bag of groceries)<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS9" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS9" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS9_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+     <asp:Panel ID="panCPFS9" runat="server" Visible="False">
+
         <p class="txtQuestions">9b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -636,13 +661,15 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS9Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+      </asp:Panel>
+
         <p class="txtQuestions">10a. Lift and carry 25 pounds (medium to large suitcase)<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS10" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS10" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS10_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+    <asp:Panel ID="panCPFS10" runat="server" Visible="False">
         <p class="txtQuestions">10b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -677,13 +704,16 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS10Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+      </asp:Panel>
+
        <p class="txtQuestions">11a. Do most heavy household chores - like scrubbing floors, vacuuming, raking leaves<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS11" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS11" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS11_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+
+     <asp:Panel ID="panCPFS11" runat="server" Visible="False">
         <p class="txtQuestions">11b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -718,13 +748,15 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS11Other" runat="server" class="txtMargin"></asp:TextBox>
-      
+      </asp:Panel>
+
         <p class="txtQuestions">12a. Do strenuous activities - like hiking, digging in garden, moving heavy objects, bicycling, aerobic dance exercises, strenuous calisthenics, etc.<span style="color: rgb(219, 79, 73)">*</span></p>
-         <asp:RadioButtonList ID="rblCPFS12" runat="server" class="txtMargin">
+         <asp:RadioButtonList ID="rblCPFS12" runat="server" class="txtMargin" AutoPostBack="true" OnSelectedIndexChanged="rblCPFS12_SelectedIndexChanged">
                 <asp:ListItem Text="No" Value="No" />
                 <asp:ListItem Text="Yes, with difficulty" Value="Yes, with difficulty" />
                 <asp:ListItem Text="Yes" Value="Yes" />
          </asp:RadioButtonList>
+    <asp:Panel ID="panCPFS12" runat="server" Visible="False">
         <p class="txtQuestions">12b. Why are you unable? OR Why do you have difficulty?</p>
            
                <p class="txtQuestions">Health Problems</p>
@@ -759,7 +791,9 @@
            
         <p class="txtQuestions">If other, please explain</p><br />
         <asp:TextBox ID="txtCPFS12Other" runat="server" class="txtMargin"></asp:TextBox>
-       </div>
+       </asp:Panel>
+        
+     </div>
 
       
      <div class="container">
