@@ -13,6 +13,10 @@ public partial class MainMenu : System.Web.UI.Page
         {
             Response.Redirect("Default.aspx");
         }
+        if (!Session["userType"].Equals("admin"))
+        {
+            resultsButton.Visible = false;
+        }
     }
 
     protected void partBtn_Click(object sender, EventArgs e)
